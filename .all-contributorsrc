@@ -1,5 +1,5 @@
 {
-  "projectName": "template-default",
+  "projectName": "jahresbericht-2024",
   "projectOwner": "technologiestiftung",
   "repoType": "github",
   "repoHost": "https://github.com",
@@ -7,7 +7,23 @@
   "imageSize": 64,
   "commit": true,
   "commitConvention": "angular",
-  "contributors": [],
+  "contributors": [
+    {
+      "login": "LuiseBrandenburger",
+      "name": "Luise Brandenburger",
+      "avatar_url": "https://avatars.githubusercontent.com/u/50147356?v=4",
+      "profile": "https:/github.com/LuiseBrandenburger",
+      "contributions": ["code", "review"]
+    },
+    {
+      "login": "JS-TSB",
+      "name": "Jakob Sawal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/185074060?v=4",
+      "profile": "https:/github.com/JS-TSB",
+      "contributions": ["code"]
+    }
+  ],
   "contributorsPerLine": 7,
   "skipCi": true
 }
+
