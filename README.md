@@ -133,4 +133,7 @@ Illustrations by {MARIA_MUSTERFRAU}, all rights reserved.
   </tr>
 </table>
 
-## Related Projects
+
+# Netlify Status
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/43366a5f-d2ed-45c9-bc22-c65a0da455c5/deploy-status)](https://app.netlify.com/sites/jahresbericht-2024/deploys)
