@@ -229,3 +229,9 @@ $RECYCLE.BIN/
 .directory
 .Trash-*
 .nfs*
+
+
+# Fonts
+/src/fonts/*
+!src/fonts/.gitkeep
+fonts.zip
