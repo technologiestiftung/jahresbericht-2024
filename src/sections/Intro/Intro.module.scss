@@ -1,0 +1,70 @@
+@use "../../styles/base" as base;
+@use "../../styles/constants" as *;
+
+.intro {
+  background-color: $color-primary-dark;
+
+  .content {
+    display: flex;
+    height: 100%;
+    @media screen and (min-width: $absolute-break) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .logoAndHeadline {
+      @media screen and (min-width: $absolute-break) {
+        padding-top: 84px;
+      }
+      .logo {
+        height: 69px;
+        margin-bottom: 87px;
+        @media screen and (max-width: $absolute-break) {
+          margin-bottom: $spacing-xl;
+        }
+      }
+    }
+
+    .headerImage {
+      display: flex;
+      align-items: center;
+
+      @media screen and (max-width: $absolute-break) {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+
+        .header {
+          margin-top: $spacing-xl;
+          width: 80%;
+        }
+      }
+
+      @media screen and (min-width: $absolute-break) {
+        .header {
+          width: 100%;
+        }
+      }
+    }
+
+    @media screen and (max-width: $absolute-break) {
+      flex-direction: column;
+    }
+
+    @media screen and (min-width: $absolute-break) {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+  }
+
+  @media screen and (max-width: $absolute-break) {
+    height: auto;
+    min-height: 100vh;
+    padding: $spacing-xxxl $spacing-l;
+  }
+  @media screen and (min-width: $absolute-break) {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    height: 100vh;
+    max-height: $max-height-section;
+  }
+}

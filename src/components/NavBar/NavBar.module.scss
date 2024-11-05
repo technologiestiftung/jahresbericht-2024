@@ -1,0 +1,119 @@
+@use "../../styles/base" as base;
+@use "../../styles/constants" as *;
+
+:local {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .wrapper {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    top: auto;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+    bottom: 5vh;
+    @media screen and (max-width: $absolute-break) {
+      bottom: 0;
+      transform: none;
+      left: 0;
+    }
+    .main {
+      display: flex;
+      justify-content: center;
+      // flex-direction: column;
+      gap: 10px;
+      padding: 8px 16px;
+      background: #fff;
+      @media screen and (min-width: $absolute-break) {
+        box-shadow:
+          0px 0px 1px 0px rgba(0, 0, 0, 0.24),
+          0px 0px 16px 2px rgba(0, 0, 0, 0.16);
+      }
+      @media screen and (max-width: $absolute-break) {
+        // border-top: 4px solid $color-primary-dark;
+        width: 100vw;
+        justify-content: space-between;
+        /* &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 4px;
+          width: 25%;
+          background-color: $color-primary-dark;
+        } */
+      }
+      & > div {
+        position: relative;
+        cursor: pointer;
+        height: 40px;
+        width: 40px;
+        /* .icon,
+        .icon div {
+          height: 40px;
+          width: 40px;
+        } */
+        .speechBubble {
+          position: absolute;
+          // right: ;
+          // top: 0;
+          left: 50%;
+          top: 0;
+          transform: translateX(-50%) translateY(-55px);
+          background: white;
+          padding: 8px 12px;
+          box-shadow:
+            0px 0px 1px 0px rgba(0, 0, 0, 0.24),
+            0px 0px 16px 2px rgba(0, 0, 0, 0.16);
+          width: fit-content;
+          p {
+            color: $color-primary-dark !important;
+            white-space: nowrap;
+            @include base.body-bold;
+          }
+        }
+        .speechBubble.down::after {
+          content: "";
+          position: absolute;
+          bottom: -18px;
+          left: 50%;
+          transform: translateX(-50%);
+          border-width: 10px;
+          border-style: solid;
+          border-color: white transparent transparent transparent;
+          // filter: drop-shadow(0px -4px 4px rgba(0, 0, 0, 0.1));
+        }
+      }
+    }
+    .jump {
+      height: 56px;
+      width: 56px;
+      padding: 8px;
+      background: #fff;
+      cursor: pointer;
+      @media screen and (min-width: $absolute-break) {
+        box-shadow:
+          0px 0px 1px 0px rgba(0, 0, 0, 0.24),
+          0px 0px 16px 2px rgba(0, 0, 0, 0.16);
+        margin-left: 8px;
+      }
+    }
+    .borderMobile {
+      position: absolute;
+      height: 4px;
+      background: $color-primary-dark;
+      top: 0;
+      transform: translateY(-4px);
+    }
+  }
+}
