@@ -1,0 +1,91 @@
+@use "../../styles/base" as base;
+@use "../../styles/constants" as *;
+
+:local {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .wrapper {
+    position: relative;
+    .bg {
+      position: sticky;
+      z-index: -1;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        opacity: 0;
+        width: 70%;
+        animation: fadeIn 0.5s ease-in-out forwards;
+      }
+    }
+    .content {
+      height: fit-content;
+      width: 373px;
+      padding-bottom: 40vh;
+      height: fit-content;
+      @media screen and (max-width: $absolute-break) {
+        width: 100vw;
+        padding-bottom: 0;
+        margin: 0;
+      }
+      .container {
+        background-color: white;
+        border: 4px solid $color-primary-dark;
+        padding: 32px 24px;
+        @media screen and (max-width: $absolute-break) {
+          width: calc(100vw - 48px);
+          margin: 0 24px;
+        }
+        .sub {
+          color: $color-primary-dark !important;
+          @include base.body-bold;
+        }
+        h4 {
+          color: $color-primary-dark;
+          margin: 3px 0 27px 0;
+        }
+        .paragraph {
+          color: #000 !important;
+          @include base.body;
+        }
+        a {
+          margin-top: 27px;
+        }
+        &.second {
+          @media screen and (min-width: $absolute-break) {
+            margin-top: 100vh;
+          }
+        }
+      }
+      .bgMobile {
+        @media screen and (max-width: $absolute-break) {
+          background-size: cover;
+          background-position: center center;
+          background-repeat: no-repeat;
+          &.oneBG {
+            padding: 120px 0;
+          }
+          &.firstBG {
+            padding: 120px 0 30px 0;
+          }
+          &.midBG {
+            padding: 30px 0;
+          }
+          &.lastBG {
+            padding: 30px 0 120px 0;
+          }
+        }
+      }
+    }
+  }
+}

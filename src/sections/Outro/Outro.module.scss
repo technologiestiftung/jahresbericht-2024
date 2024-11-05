@@ -1,0 +1,63 @@
+@use "../../styles/base" as base;
+@use "../../styles/constants" as *;
+
+:local {
+  .wrapper {
+    padding: 80px 0;
+    max-width: 1160px;
+    margin: 0 auto;
+    @media screen and (max-width: $absolute-break) {
+      padding: 70px 24px;
+    }
+    & > h2 {
+      color: $color-primary-dark;
+      padding: 80px 0;
+      @media screen and (max-width: $absolute-break) {
+        padding: 0 0 50px 0;
+      }
+    }
+    .content {
+      display: flex;
+      gap: 28px;
+      margin: 24px 0;
+      @media screen and (max-width: $absolute-break) {
+        flex-direction: column;
+        gap: 60px;
+      }
+      & > div {
+        display: flex;
+        flex-direction: column;
+        & > h4 {
+          color: $color-primary-dark;
+        }
+        & > p {
+          color: $color-primary-dark !important;
+          margin: 24px 0 !important;
+          @include base.body;
+        }
+        & > a {
+          margin-top: auto;
+        }
+      }
+    }
+    .sub {
+      margin: 72px 0;
+      color: $color-primary-dark;
+    }
+    .logoWrapper {
+      display: flex;
+      gap: 80px;
+      img {
+        height: 120px;
+      }
+      @media screen and (max-width: $absolute-break) {
+        flex-direction: column;
+        gap: 40px;
+        img {
+          height: 120px;
+          width: 180px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@use "../../styles/base" as base;
+@use "../../styles/constants" as *;
+
+:local {
+  .wrapper {
+    padding: 80px 0;
+    max-width: 1160px;
+    margin: 0 auto;
+    @media screen and (max-width: $absolute-break) {
+      padding: 80px 24px 48px 24px;
+    }
+    .logos {
+      display: flex;
+      gap: 16px;
+      a {
+        display: block;
+        height: 64px;
+        width: 64px;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  .last {
+    background: $color-primary-dark;
+    padding-bottom: calc(5vh + 60px);
+    @media screen and (max-width: $absolute-break) {
+      padding-bottom: 60px;
+    }
+    .paragrah {
+      color: var(--Wei, #fff);
+      font-family: "Clan Pro";
+      font-size: 16px;
+      font-style: normal;
+      line-height: normal;
+      margin: 0;
+    }
+    a {
+      .paragrah {
+        @media screen and (max-width: $absolute-break) {
+          font-weight: 700 !important;
+          margin-bottom: 20px;
+        }
+      }
+    }
+    & > div {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 43px 0 37px 0;
+      display: flex;
+      justify-content: space-between;
+      & > div {
+        display: flex;
+        gap: 48px;
+      }
+      @media screen and (max-width: $absolute-break) {
+        padding: 33px 24px 27px 24px;
+        flex-direction: column-reverse;
+      }
+    }
+    @media screen and (min-width: $absolute-break) {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+    }
+  }
+}
