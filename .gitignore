@@ -232,6 +232,6 @@ $RECYCLE.BIN/
 
 
 # Fonts
-/src/fonts/*
-!src/fonts/.gitkeep
+/public/fonts/*
+!public/fonts/.gitkeep
 fonts.zip
