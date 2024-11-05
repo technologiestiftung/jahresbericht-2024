@@ -4,6 +4,7 @@ import Button from "../Button";
 import cn from "./Slider.module.scss";
 import cx from "classnames";
 import Arrow from "../../icons/Arrow.svg";
+import { useSwipeable } from "react-swipeable";
 
 const Slider = () => {
   const [indexActive, indexActiveSet] = useState(0);
@@ -13,6 +14,23 @@ const Slider = () => {
   const sliderGap = 28;
 
   const { content: rueckblick, title } = content.rueckblick;
+
+  const left = () => {
+    if (indexActive - 1 < 0) return indexActiveSet(rueckblick.length - 1);
+    indexActiveSet(indexActive - 1);
+  };
+  const right = () => {
+    if (indexActive + 1 === rueckblick.length) return indexActiveSet(0);
+    indexActiveSet(indexActive + 1);
+  };
+
+  const handlers = useSwipeable({
+    onSwipedLeft: () => right(),
+    onSwipedRight: () => left(),
+    preventDefaultTouchmoveEvent: true,
+    trackTouch: true,
+    trackMouse: true,
+  });
 
   useEffect(() => {
     if (sliderRef.current && !sliderWidth) {
@@ -26,16 +44,9 @@ const Slider = () => {
       <div className={cn.headingContainer}>
         <h2 dangerouslySetInnerHTML={{ __html: title }} />
       </div>
-      <div className={cn.sliderWrapper}>
+      <div className={cn.sliderWrapper} {...handlers}>
         {/* Arrow left */}
-        <div
-          className={cn.arrow}
-          onClick={() => {
-            if (indexActive - 1 < 0)
-              return indexActiveSet(rueckblick.length - 1);
-            indexActiveSet(indexActive - 1);
-          }}
-        >
+        <div className={cn.arrow} onClick={left}>
           <Arrow />
         </div>
         {/* Slider content container */}
@@ -71,35 +82,16 @@ const Slider = () => {
           </div>
         </div>
         {/* Arrow right */}
-        <div
-          className={cn.arrow}
-          onClick={() => {
-            if (indexActive + 1 === rueckblick.length) return indexActiveSet(0);
-            indexActiveSet(indexActive + 1);
-          }}
-        >
+        <div className={cn.arrow} onClick={right}>
           <Arrow />
         </div>
 
         {/* Mobile navigation */}
         {/* TODO: refactor */}
-        <div
-          className={cx(cn.mobileArrow, cn.left)}
-          onClick={() => {
-            if (indexActive - 1 < 0)
-              return indexActiveSet(rueckblick.length - 1);
-            indexActiveSet(indexActive - 1);
-          }}
-        >
+        <div className={cx(cn.mobileArrow, cn.left)} onClick={left}>
           <Arrow />
         </div>
-        <div
-          className={cx(cn.mobileArrow, cn.right)}
-          onClick={() => {
-            if (indexActive + 1 === rueckblick.length) return indexActiveSet(0);
-            indexActiveSet(indexActive + 1);
-          }}
-        >
+        <div className={cx(cn.mobileArrow, cn.right)} onClick={right}>
           <Arrow />
         </div>
       </div>
