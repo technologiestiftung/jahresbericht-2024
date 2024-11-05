@@ -9,10 +9,10 @@ function SingleAccordion({ content, title = "Vorwort lesen" }) {
   const [scrollHeight, setScrollHeight] = useState(0);
 
   const clickHandler = () => {
-    if (!isOpen && window.innerWidth > 768) {
+    if (!isOpen) {
       const topPosition =
         clickEl.current.getBoundingClientRect().top + window.scrollY;
-      const offset = 400;
+      const offset = window.innerWidth <= 768 ? window.innerHeight * 0.1 : 400;
       window.setTimeout(
         () =>
           window.scrollTo({

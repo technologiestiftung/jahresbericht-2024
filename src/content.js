@@ -49,85 +49,88 @@ const content = {
       },
     ],
   },
-  rueckblick: [
-    {
-      title: "Q1/24 - Januar",
-      content:
-        "Fragen an die Berliner Politik? Parla antwortet: Unsere KI-Assistenz macht zehntausende Dokumente aus dem Berliner Abgeordnetenhaus durchsuchbar.",
-      link: "https://www.technologiestiftung-berlin.de/profil/blog/3-fragen-an-die-berliner-politik-beantwortet-mit-ki-tool-parla",
-      btnText: "Mehr zu Parla und wie das KI-Tool funktioniert",
-      img: {
-        src: "assets/images/placeholder.png",
-        alt: "Placeholder ALT",
+  rueckblick: {
+    title: "Unser Jahr im Rückblick",
+    content: [
+      {
+        title: "Q1/24 - Januar",
+        content:
+          "Fragen an die Berliner Politik? Parla antwortet: Unsere KI-Assistenz macht zehntausende Dokumente aus dem Berliner Abgeordnetenhaus durchsuchbar.",
+        link: "https://www.technologiestiftung-berlin.de/profil/blog/3-fragen-an-die-berliner-politik-beantwortet-mit-ki-tool-parla",
+        btnText: "Mehr zu Parla und wie das KI-Tool funktioniert",
+        img: {
+          src: "assets/images/placeholder.png",
+          alt: "Placeholder ALT",
+        },
       },
-    },
-    {
-      title: "Q2/24 - April",
-      content:
-        "Wir feiern den Girls'Day: Mit Mädchen ab 13 Jahren haben unsere Kolleg:innen am bundesweiten Aktionstag fleißig programmiert und an Hardware getüftelt.",
-      link: "https://www.technologiestiftung-berlin.de/profil/blog/girlsday-was-wir-ueber-das-arbeiten-im-it-bereich-gelernt-haben",
-      btnText: "Mehr zum Girls'Day",
-      img: {
-        src: "assets/images/placeholder.png",
-        alt: "Placeholder ALT",
+      {
+        title: "Q2/24 - April",
+        content:
+          "Wir feiern den Girls'Day: Mit Mädchen ab 13 Jahren haben unsere Kolleg:innen am bundesweiten Aktionstag fleißig programmiert und an Hardware getüftelt.",
+        link: "https://www.technologiestiftung-berlin.de/profil/blog/girlsday-was-wir-ueber-das-arbeiten-im-it-bereich-gelernt-haben",
+        btnText: "Mehr zum Girls'Day",
+        img: {
+          src: "assets/images/placeholder.png",
+          alt: "Placeholder ALT",
+        },
       },
-    },
-    {
-      title: "Q2/24 - Mai",
-      content:
-        "Wie sieht das digitale Berlin in echt und in Farbe aus? Das zeigen unsere sechs Bühnenbeiträge auf der re:publica 2024.",
-      link: "https://www.technologiestiftung-berlin.de/profil/blog/rueckblick-auf-die-republica-2024-mit-dem-citylab",
-      btnText: "Unsere re:publica 24 zum Nachgucken",
-      img: {
-        src: "assets/images/placeholder.png",
-        alt: "Placeholder ALT",
+      {
+        title: "Q2/24 - Mai",
+        content:
+          "Wie sieht das digitale Berlin in echt und in Farbe aus? Das zeigen unsere sechs Bühnenbeiträge auf der re:publica 2024.",
+        link: "https://www.technologiestiftung-berlin.de/profil/blog/rueckblick-auf-die-republica-2024-mit-dem-citylab",
+        btnText: "Unsere re:publica 24 zum Nachgucken",
+        img: {
+          src: "assets/images/placeholder.png",
+          alt: "Placeholder ALT",
+        },
       },
-    },
-    {
-      title: "Q3/24 - Juli",
-      content:
-        "Startschuss für die Post-COVID-Challenge vom Bundesministerium des Innern und für Heimat! Mit dabei in der ersten Phase: Unsere Daten-Enthusiast:innen im Team mit Medizin&shy;informatiker:&shy;innen der Charité.",
-      link: "https://www.linkedin.com/feed/update/urn:li:activity:7223712317065043971",
-      btnText: "Zum Team-Post mit der Charité",
-      img: {
-        src: "assets/images/placeholder.png",
-        alt: "Placeholder ALT",
+      {
+        title: "Q3/24 - Juli",
+        content:
+          "Startschuss für die Post-COVID-Challenge vom Bundesministerium des Innern und für Heimat! Mit dabei in der ersten Phase: Unsere Daten-Enthusiast:innen im Team mit Medizin&shy;informatiker:&shy;innen der Charité.",
+        link: "https://www.linkedin.com/feed/update/urn:li:activity:7223712317065043971",
+        btnText: "Zum Team-Post mit der Charité",
+        img: {
+          src: "assets/images/placeholder.png",
+          alt: "Placeholder ALT",
+        },
       },
-    },
-    {
-      title: "Q3/24 - September",
-      content:
-        "Ein KI-gestütztes Vorhersagemodelle für die Bewässerung unserer Stadtbäume? Ein ausgezeichnetes Projekt, fand der bundesweit wichtigste Klimawandel-Wettbewerb „Blauer Kompass“ und nominierte unser Projekt QTrees für den Publikumspreis.",
-      link: "https://www.linkedin.com/feed/update/urn:li:activity:7243948883389595648",
-      btnText: "Zu den glücklichen Urkunden-Gesichtern",
-      img: {
-        src: "assets/images/placeholder.png",
-        alt: "Placeholder ALT",
+      {
+        title: "Q3/24 - September",
+        content:
+          "Ein KI-gestütztes Vorhersagemodelle für die Bewässerung unserer Stadtbäume? Ein ausgezeichnetes Projekt, fand der bundesweit wichtigste Klimawandel-Wettbewerb „Blauer Kompass“ und nominierte unser Projekt QTrees für den Publikumspreis.",
+        link: "https://www.linkedin.com/feed/update/urn:li:activity:7243948883389595648",
+        btnText: "Zu den glücklichen Urkunden-Gesichtern",
+        img: {
+          src: "assets/images/placeholder.png",
+          alt: "Placeholder ALT",
+        },
       },
-    },
-    {
-      title: "Q3/24 - Oktober",
-      content:
-        "Und noch eine Runde: Unser Pitch beim Bundesministerium des Innern und für Heimat hat überzeugt -  weiter geht’s mit fünf verbleibenden Teams in der zweiten Phase der Post-COVID-Challenge!",
-      link: "https://www.technologiestiftung-berlin.de/profil/blog/gesundheitsdaten-oeffnen-und-schuetzen-ein-gespraech-zur-post-covid-challenge",
-      btnText: "Mehr zu unserem Post-COVID-Datenmodell",
-      img: {
-        src: "assets/images/placeholder.png",
-        alt: "Placeholder ALT",
+      {
+        title: "Q3/24 - Oktober",
+        content:
+          "Und noch eine Runde: Unser Pitch beim Bundesministerium des Innern und für Heimat hat überzeugt -  weiter geht’s mit fünf verbleibenden Teams in der zweiten Phase der Post-COVID-Challenge!",
+        link: "https://www.technologiestiftung-berlin.de/profil/blog/gesundheitsdaten-oeffnen-und-schuetzen-ein-gespraech-zur-post-covid-challenge",
+        btnText: "Mehr zu unserem Post-COVID-Datenmodell",
+        img: {
+          src: "assets/images/placeholder.png",
+          alt: "Placeholder ALT",
+        },
       },
-    },
-    {
-      title: "Q4/24 - Dezember",
-      content:
-        "Ho ho ho, was bringt Berlin noch mehr Datenvergnügen? Unser beliebter Berliner Weihnachts&shy;marktfinder, jetzt auch auf englisch und mit neuer Suchfunktion.",
-      link: "https://weihnachtsmaerkte.odis-berlin.de/",
-      btnText: "Zu unserem Weihnachtsmarktfinder",
-      img: {
-        src: "assets/images/placeholder.png",
-        alt: "Placeholder ALT",
+      {
+        title: "Q4/24 - Dezember",
+        content:
+          "Ho ho ho, was bringt Berlin noch mehr Datenvergnügen? Unser beliebter Berliner Weihnachts&shy;marktfinder, jetzt auch auf englisch und mit neuer Suchfunktion.",
+        link: "https://weihnachtsmaerkte.odis-berlin.de/",
+        btnText: "Zu unserem Weihnachtsmarktfinder",
+        img: {
+          src: "assets/images/placeholder.png",
+          alt: "Placeholder ALT",
+        },
       },
-    },
-  ],
+    ],
+  },
   chapters: [
     {
       id: "smartCity",

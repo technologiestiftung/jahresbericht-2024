@@ -20,7 +20,7 @@ function Vorwort() {
             </div>
           </div>
           <div>
-            <p className='vorwort'>&quot;{item.vorwort}&quot;</p>
+            <p>&quot;{item.vorwort}&quot;</p>
             <p>{item.name}</p>
             <p>{item.position}</p>
             <SingleAccordion content={item.content} />

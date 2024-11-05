@@ -60,13 +60,11 @@ function NavBar() {
               const getID =
                 icon.id || icon.name.toLowerCase().replace(" ", "-");
               const section = document.getElementById(getID);
-              console.log(getID, section);
-              if (section) {
-                section.scrollIntoView({
-                  behavior: "smooth",
-                  block: "start",
-                });
-              }
+              if (!section) return;
+              section.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
             }}
           >
             <SingleNavBarIcon icon={icon.icon} name={icon.name} />
@@ -74,7 +72,6 @@ function NavBar() {
         ))}
         {window.innerWidth <= 768 && (
           <div
-            // className={cn.jump}
             onClick={() =>
               window.scrollTo({
                 top: 0,

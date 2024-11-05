@@ -9,9 +9,7 @@ function Sticky({ content, title }) {
   const secondContainerRef = useRef(null);
   const [isFirstVisible, setIsFirstVisible] = useState(true);
 
-  const setClasses = (length, index) => {
-    return cn.first;
-  };
+  const testing = false;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,11 +55,10 @@ function Sticky({ content, title }) {
         {content.map((current, index) => (
           <div
             key={current.id}
-            /* style={{
-              backgroundImage: `url('${current.img.src}')`,
-            }} */
             style={{
-              backgroundImage: `url('${index % 2 === 0 ? "assets/images/test-img.jpg" : "assets/images/test-img-2.jpg"}')`,
+              backgroundImage: testing
+                ? `url('${index % 2 === 0 ? "assets/images/test-img.jpg" : "assets/images/test-img-2.jpg"}')`
+                : `url('${current.img.src}')`,
             }}
             className={cx(
               cn.bgMobile,

@@ -30,7 +30,7 @@ function People() {
             </div>
           </div>
           <div>
-            <p className='vorwort'>&quot;{item.intro}&quot;</p>
+            <p>&quot;{item.intro}&quot;</p>
             <p>{item.name}</p>
             <p>{item.position}</p>
           </div>

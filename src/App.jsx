@@ -20,13 +20,8 @@ function App() {
     const position = window.scrollY;
     const getScrollPosition =
       sectionRef.current.scrollHeight + window.innerHeight / 2;
-    if (position >= getScrollPosition && !showNav) {
-      console.log("show");
-      setShowNav(true);
-    } else if (position < getScrollPosition && showNav) {
-      console.log("dont show");
-      setShowNav(false);
-    }
+    if (position >= getScrollPosition && !showNav) return setShowNav(true);
+    if (position < getScrollPosition && showNav) return setShowNav(false);
   };
 
   useEffect(() => {

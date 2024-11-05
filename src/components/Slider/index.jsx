@@ -12,6 +12,8 @@ const Slider = () => {
   const [sliderWidth, setSliderWidth] = useState(0);
   const sliderGap = 28;
 
+  const { content: rueckblick, title } = content.rueckblick;
+
   useEffect(() => {
     if (sliderRef.current && !sliderWidth) {
       const elementWidth = sliderRef.current.getBoundingClientRect().width;
@@ -22,7 +24,7 @@ const Slider = () => {
   return (
     <section className={cn.sliderContainer}>
       <div className={cn.headingContainer}>
-        <h2>Unser Jahr im Rückblick</h2>
+        <h2 dangerouslySetInnerHTML={{ __html: title }} />
       </div>
       <div className={cn.sliderWrapper}>
         {/* Arrow left */}
@@ -30,7 +32,7 @@ const Slider = () => {
           className={cn.arrow}
           onClick={() => {
             if (indexActive - 1 < 0)
-              return indexActiveSet(content.rueckblick.length - 1);
+              return indexActiveSet(rueckblick.length - 1);
             indexActiveSet(indexActive - 1);
           }}
         >
@@ -46,7 +48,7 @@ const Slider = () => {
               gap: `${sliderGap}px`,
             }}
           >
-            {content.rueckblick.map((slide, index) => (
+            {rueckblick.map((slide, index) => (
               <div
                 className={cn.slide}
                 key={index}
@@ -72,8 +74,7 @@ const Slider = () => {
         <div
           className={cn.arrow}
           onClick={() => {
-            if (indexActive + 1 === content.rueckblick.length)
-              return indexActiveSet(0);
+            if (indexActive + 1 === rueckblick.length) return indexActiveSet(0);
             indexActiveSet(indexActive + 1);
           }}
         >
@@ -86,7 +87,7 @@ const Slider = () => {
           className={cx(cn.mobileArrow, cn.left)}
           onClick={() => {
             if (indexActive - 1 < 0)
-              return indexActiveSet(content.rueckblick.length - 1);
+              return indexActiveSet(rueckblick.length - 1);
             indexActiveSet(indexActive - 1);
           }}
         >
@@ -95,8 +96,7 @@ const Slider = () => {
         <div
           className={cx(cn.mobileArrow, cn.right)}
           onClick={() => {
-            if (indexActive + 1 === content.rueckblick.length)
-              return indexActiveSet(0);
+            if (indexActive + 1 === rueckblick.length) return indexActiveSet(0);
             indexActiveSet(indexActive + 1);
           }}
         >
@@ -105,7 +105,7 @@ const Slider = () => {
       </div>
       <div className={cn.nav}>
         <p>
-          {indexActive + 1} / {content.rueckblick.length}
+          {indexActive + 1} / {rueckblick.length}
         </p>
       </div>
     </section>

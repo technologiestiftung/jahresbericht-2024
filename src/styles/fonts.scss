@@ -2,30 +2,26 @@
 
 @font-face {
   font-family: "Clan Pro";
-  src:
-    local("Clan"),
-    url(../fonts/ClanWebPro-News.woff) format("woff");
+  src: url(../fonts/ClanWebPro-News.woff) format("woff");
   font-weight: normal;
 }
 
 @font-face {
   font-family: "Clan Pro";
-  src:
-    local("Clan"),
-    url(../fonts/ClanWebPro-Bold.woff) format("woff");
+  src: url(../fonts/ClanWebPro-Bold.woff) format("woff");
   font-weight: bold;
 }
 
 @font-face {
   font-family: "Source Serif Pro";
-  src: url("../fonts/SourceSerifPro-Regular.woff") format("woff");
+  src: url(../fonts/SourceSerifPro-Regular.woff) format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Source Serif Pro";
-  src: url("../fonts/SourceSerifPro-Bold.woff") format("woff");
+  src: url(../fonts/SourceSerifPro-Bold.woff) format("woff");
   font-weight: 700;
   font-style: normal;
 }
