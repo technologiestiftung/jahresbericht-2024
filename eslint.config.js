@@ -40,6 +40,7 @@ export default [
         { allowConstantExport: true },
       ],
       "prettier/prettier": "error",
+      "react/prop-types": "off",
 
       "jsx-a11y/anchor-is-valid": "warn", // Warnung für ungültige Links
       "jsx-a11y/alt-text": "warn", // Warnung, wenn Bildern Alt-Text fehlt
