@@ -24,6 +24,13 @@ const Slider = () => {
     indexActiveSet(indexActive + 1);
   };
 
+  const handleResize = () => {
+    if (sliderRef.current && !sliderWidth) {
+      const elementWidth = sliderRef.current.getBoundingClientRect().width;
+      setSliderWidth(elementWidth + sliderGap);
+    }
+  };
+
   const handlers = useSwipeable({
     onSwipedLeft: () => right(),
     onSwipedRight: () => left(),
@@ -33,11 +40,11 @@ const Slider = () => {
   });
 
   useEffect(() => {
-    if (sliderRef.current && !sliderWidth) {
-      const elementWidth = sliderRef.current.getBoundingClientRect().width;
-      setSliderWidth(elementWidth + sliderGap);
-    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  useEffect(handleResize, []);
 
   return (
     <section className={cn.sliderContainer}>

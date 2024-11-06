@@ -4,15 +4,14 @@
 :local {
   .accordion {
     width: 100%;
-    padding: 16px 0;
     .clickable {
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      border-top: 2px solid $color-primary-dark;
+      border-top: $spacing-2xs solid $color-primary-dark;
       background: rgba(30, 55, 145, 0.08);
       cursor: pointer;
-      padding: 8px;
+      padding: $spacing-s;
       user-select: none;
       & > img {
         width: 30px;
@@ -46,12 +45,12 @@
       overflow: hidden;
       background: rgba(30, 55, 145, 0.08);
       .paragraph {
-        padding: 24px 0;
+        padding: $spacing-l 0;
         max-width: 552px;
         p {
           color: $color-primary-dark !important;
-          border-left: 2px solid $color-primary-dark !important;
-          padding: 0 48px !important;
+          border-left: $spacing-2xs solid $color-primary-dark !important;
+          padding: 0 $spacing-2xl !important;
           @include base.body;
         }
       }

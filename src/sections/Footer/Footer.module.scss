@@ -3,19 +3,22 @@
 
 :local {
   .wrapper {
-    padding: 80px 0;
-    max-width: 1160px;
+    padding: $spacing-5xl 0;
+    max-width: $smaller-content;
     margin: 0 auto;
     @media screen and (max-width: $absolute-break) {
-      padding: 80px 24px 48px 24px;
+      padding: $spacing-5xl $spacing-l $spacing-2xl $spacing-l;
+    }
+    @media screen and (min-width: $absolute-break) and (max-width: $max-width-content) {
+      padding: $spacing-5xl $spacing-l;
     }
     .logos {
       display: flex;
-      gap: 16px;
+      gap: $spacing-m;
       a {
         display: block;
-        height: 64px;
-        width: 64px;
+        height: $spacing-3xl;
+        width: $spacing-3xl;
       }
       img {
         height: 100%;
@@ -32,7 +35,7 @@
     .paragrah {
       color: var(--Wei, #fff);
       font-family: "Clan Pro";
-      font-size: 16px;
+      font-size: $spacing-m;
       font-style: normal;
       line-height: normal;
       margin: 0;
@@ -46,18 +49,21 @@
       }
     }
     & > div {
-      max-width: 1160px;
+      max-width: $smaller-content;
       margin: 0 auto;
-      padding: 43px 0 37px 0;
+      padding: 43px 0;
       display: flex;
       justify-content: space-between;
       & > div {
         display: flex;
-        gap: 48px;
+        gap: $spacing-2xl;
       }
       @media screen and (max-width: $absolute-break) {
-        padding: 33px 24px 27px 24px;
+        padding: 33px $spacing-l 27px $spacing-l;
         flex-direction: column-reverse;
+      }
+      @media screen and (min-width: $absolute-break) and (max-width: $max-width-content) {
+        padding: 33px $spacing-l 27px $spacing-l;
       }
     }
     @media screen and (min-width: $absolute-break) {
