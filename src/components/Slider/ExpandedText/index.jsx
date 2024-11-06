@@ -1,19 +1,24 @@
+import cx from "classnames";
 import { useState } from "react";
 import cn from "../Slider.module.scss";
-import cx from "classnames";
 
-const ExpandedText = ({ content, maxChars = 110 }) => {
+const ExpandedText = ({ content }) => {
   const [makeExpanded, setMakeExpanded] = useState(false);
-  const displayText = makeExpanded
-    ? content
-    : `${content.slice(0, maxChars)}...`;
 
   return (
-    <p
-      dangerouslySetInnerHTML={{ __html: content }}
+    <div
+      role='button'
+      tabIndex={0}
       className={cx(cn.limitedLines, makeExpanded ? cn.expanded : "")}
       onClick={() => setMakeExpanded(!makeExpanded)}
-    />
+      onKeyDown={event => {
+        if (event.key === "Enter" || event.key === " ") {
+          setMakeExpanded(!makeExpanded);
+        }
+      }}
+    >
+      <p dangerouslySetInnerHTML={{ __html: content }} />
+    </div>
   );
 };
 

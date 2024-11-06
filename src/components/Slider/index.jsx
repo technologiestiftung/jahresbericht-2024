@@ -1,10 +1,10 @@
+import cx from "classnames";
 import { useEffect, useRef, useState } from "react";
+import { useSwipeable } from "react-swipeable";
 import content from "../../content";
+import Arrow from "../../icons/Arrow.svg";
 import Button from "../Button";
 import cn from "./Slider.module.scss";
-import cx from "classnames";
-import Arrow from "../../icons/Arrow.svg";
-import { useSwipeable } from "react-swipeable";
 
 const Slider = () => {
   const [indexActive, indexActiveSet] = useState(0);
@@ -37,6 +37,7 @@ const Slider = () => {
       const elementWidth = sliderRef.current.getBoundingClientRect().width;
       setSliderWidth(elementWidth + sliderGap);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -46,7 +47,17 @@ const Slider = () => {
       </div>
       <div className={cn.sliderWrapper} {...handlers}>
         {/* Arrow left */}
-        <div className={cn.arrow} onClick={left}>
+        <div
+          className={cn.arrow}
+          role='button'
+          tabIndex={0}
+          onClick={left}
+          onKeyDown={event => {
+            if (event.key === "Enter" || event.key === " ") {
+              left();
+            }
+          }}
+        >
           <Arrow />
         </div>
         {/* Slider content container */}
@@ -82,16 +93,46 @@ const Slider = () => {
           </div>
         </div>
         {/* Arrow right */}
-        <div className={cn.arrow} onClick={right}>
+        <div
+          className={cn.arrow}
+          role='button'
+          tabIndex={0}
+          onClick={right}
+          onKeyDown={event => {
+            if (event.key === "Enter" || event.key === " ") {
+              right();
+            }
+          }}
+        >
           <Arrow />
         </div>
 
         {/* Mobile navigation */}
         {/* TODO: refactor */}
-        <div className={cx(cn.mobileArrow, cn.left)} onClick={left}>
+        <div
+          className={cx(cn.mobileArrow, cn.left)}
+          role='button'
+          tabIndex={0}
+          onClick={left}
+          onKeyDown={event => {
+            if (event.key === "Enter" || event.key === " ") {
+              left();
+            }
+          }}
+        >
           <Arrow />
         </div>
-        <div className={cx(cn.mobileArrow, cn.right)} onClick={right}>
+        <div
+          className={cx(cn.mobileArrow, cn.right)}
+          role='button'
+          tabIndex={0}
+          onClick={right}
+          onKeyDown={event => {
+            if (event.key === "Enter" || event.key === " ") {
+              right();
+            }
+          }}
+        >
           <Arrow />
         </div>
       </div>
