@@ -48,6 +48,7 @@ const Slider = () => {
       <div className={cn.sliderWrapper} {...handlers}>
         {/* Arrow left */}
         <div
+          aria-label='Pfeil links'
           className={cn.arrow}
           role='button'
           tabIndex={0}
@@ -94,6 +95,7 @@ const Slider = () => {
         </div>
         {/* Arrow right */}
         <div
+          aria-label='Pfeil rechts'
           className={cn.arrow}
           role='button'
           tabIndex={0}
@@ -110,6 +112,7 @@ const Slider = () => {
         {/* Mobile navigation */}
         {/* TODO: refactor */}
         <div
+          aria-label='Pfeil links'
           className={cx(cn.mobileArrow, cn.left)}
           role='button'
           tabIndex={0}
@@ -125,6 +128,7 @@ const Slider = () => {
         <div
           className={cx(cn.mobileArrow, cn.right)}
           role='button'
+          aria-label='Pfeil rechts'
           tabIndex={0}
           onClick={right}
           onKeyDown={event => {
