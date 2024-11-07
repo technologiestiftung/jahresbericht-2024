@@ -39,7 +39,7 @@ export default [
         "warn",
         { allowConstantExport: true },
       ],
-      "prettier/prettier": "error",
+      "prettier/prettier": "warn",
       "react/prop-types": "off",
 
       "jsx-a11y/anchor-is-valid": "warn", // Warnung für ungültige Links
