@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import cn from "./SingleAccordion.module.scss";
 import Arrow from "../../icons/Arrow.svg";
+import cn from "./SingleAccordion.module.scss";
 
 function SingleAccordion({ content, title = "Vorwort lesen" }) {
   const clickEl = useRef();
@@ -29,13 +29,20 @@ function SingleAccordion({ content, title = "Vorwort lesen" }) {
     if (panelEl.current) {
       setScrollHeight(panelEl.current.scrollHeight);
     }
-  }, [panelEl.current]);
+  }, []);
 
   return (
     <div className={cn.accordion} id={`accordion-${Math.random()}`}>
       <div
         className={cn.clickable}
+        role='button'
+        tabIndex={0}
         onClick={e => clickHandler(e)}
+        onKeyDown={event => {
+          if (event.key === "Enter" || event.key === " ") {
+            clickHandler(event);
+          }
+        }}
         ref={clickEl}
       >
         <div className={isOpen ? cn.turned : ""}>
