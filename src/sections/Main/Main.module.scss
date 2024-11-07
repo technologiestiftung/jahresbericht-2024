@@ -9,13 +9,17 @@
     color: $color-white;
 
     .content {
-      max-width: 1120px;
+      max-width: $smaller-content;
       margin: 0 auto;
       display: flex;
-      gap: 84px;
+      gap: 138px;
       align-items: center;
       @media screen and (max-width: $absolute-break) {
         gap: 20px;
+      }
+      @media screen and (min-width: $absolute-break) and (max-width: $max-width-content) {
+        padding: $spacing-5xl $spacing-xl;
+        gap: $spacing-l;
       }
       & > div:first-of-type {
         width: 204px;
@@ -24,6 +28,9 @@
         flex: 1;
         h2 {
           margin-bottom: 37px;
+          @media screen and (max-width: $absolute-break) {
+            margin-bottom: $spacing-l;
+          }
         }
         p {
           @include base.body-intro;
@@ -44,11 +51,14 @@
         height: 100vh;
         max-height: $max-height-section;
       }
+      @media screen and (min-width: $absolute-break) and (max-width: $max-width-content) {
+        height: fit-content;
+      }
     }
 
     @media screen and (max-width: $absolute-break) {
       width: 100%;
-      padding: $spacing-xxxl $spacing-l;
+      padding: $spacing-3xl $spacing-l;
     }
   }
 }
