@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from "react";
-import cn from "./Sticky.module.scss";
 import cx from "classnames";
+import { useEffect, useRef, useState } from "react";
 import Button from "../../components/Button";
+import cn from "./Sticky.module.scss";
 
 function Sticky({ content, title }) {
   const sectionRef = useRef(null);
@@ -35,7 +35,7 @@ function Sticky({ content, title }) {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [content?.length]);
 
   if (!content) return <></>;
 
@@ -44,9 +44,11 @@ function Sticky({ content, title }) {
       {window.innerWidth > 768 && (
         <>
           <div className={cn.bg}>
-            {isFirstVisible && <img src={content[0].img.src} />}
+            {isFirstVisible && (
+              <img alt={content[0].img.alt} src={content[0].img.src} />
+            )}
             {!isFirstVisible && content?.length === 2 && (
-              <img src={content[1].img.src} />
+              <img alt={content[1].img.alt} src={content[1].img.src} />
             )}
           </div>
         </>
