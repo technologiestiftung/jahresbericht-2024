@@ -1,5 +1,4 @@
 import BildungIcon from "../../icons/Bildung.svg";
-import HeaderIcon from "../../icons/Header.svg";
 import KulturIcon from "../../icons/Kultur.svg";
 import NeueTechnologienIcon from "../../icons/NeueTechnologien.svg";
 import ProtoypingIcon from "../../icons/Prototyping.svg";
@@ -16,7 +15,6 @@ function Icons({ type }) {
       {type === "kultur" && <KulturIcon />}
       {type === "prototyping" && <ProtoypingIcon />}
       {type === "weitereAktivitaeten" && <WeiteresIcon />}
-      {type === "header" && <HeaderIcon />}
     </div>
   );
 }
