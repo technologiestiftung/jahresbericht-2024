@@ -41,7 +41,7 @@ function Sticky({ content, title }) {
 
   return (
     <section className={cn.wrapper} ref={sectionRef}>
-      {window.innerWidth > 768 && (
+      {window.innerWidth > 1280 && (
         <>
           <div className={cn.bg}>
             {isFirstVisible && (
