@@ -362,7 +362,7 @@ const content = {
         },
       },
     ],
-    link: "https://instagram.com",
+    link: "https://www.instagram.com/reel/DADzxSdszCv",
     btnText: "Das ganze Reel auf Instagram",
   },
   outro: {
@@ -373,14 +373,14 @@ const content = {
         title: "Jahresabschluss",
         content:
           "Zu ihrer Arbeit stellt die Technologiestiftung Berlin jährlich einen Jahresabschluss auf, der von einer vom Kuratorium benannten Wirtschaftsprüfungsgesellschaft geprüft wird.<br><br>Der Jahresabschluss wird vorraussichtlich im Juni 2025 im Downloadbereich auf der Webseite der Technologiestiftung Berlin zur Verfügung gestellt.",
-        link: "#",
+        link: "https://www.technologiestiftung-berlin.de/downloads",
         btnText: "Zum Downloadbereich",
       },
       {
         title: "Auf dem Laufenden bleiben",
         content:
           "Das Jahr 2024 war für die Technologiestiftung ein spannendes Jahr, in dem sie viele Projekte erfolgreich durchführen konnte. Gleichzeitig entwickelten sich neue Aufgaben und Projekte, die im Jahr 2025 realisiert werden.<br><br>Über die laufende Arbeit informiert der Blog und der monatlich erscheinende Newsletter, der allen Abonennt:innen kostenfrei zugeschickt wird.",
-        link: "#",
+        link: "https://www.technologiestiftung-berlin.de/newsletter",
         btnText: "Zur Anmeldung",
       },
     ],
@@ -406,42 +406,42 @@ const content = {
       {
         src: "assets/logos/LinkedIn.svg",
         alt: "Logo LinkedIn",
-        link: "https://linkedin.com",
+        link: "https://www.linkedin.com/company/technologiestiftung/",
       },
       {
         src: "assets/logos/Instagram.svg",
         alt: "Logo Instagram",
-        link: "https://linkedin.com",
+        link: "https://www.instagram.com/technologiestiftung/",
       },
       {
         src: "assets/logos/X.svg",
         alt: "Logo X (Twitter)",
-        link: "https://linkedin.com",
+        link: "https://twitter.com/TSBBerlin",
       },
       {
         src: "assets/logos/Facebook.svg",
         alt: "Logo Facebook",
-        link: "https://linkedin.com",
+        link: "https://www.facebook.com/Technologiestiftung",
       },
       {
         src: "assets/logos/Github.svg",
         alt: "Logo Github",
-        link: "https://linkedin.com",
+        link: "https://github.com/technologiestiftung",
       },
       {
         src: "assets/logos/Youtube.svg",
         alt: "Logo Youtube",
-        link: "https://linkedin.com",
+        link: "https://www.youtube.com/channel/UCXKw3_0L2rqLpz94L7YwFqg",
       },
     ],
     links: [
       {
-        text: "Impressum",
-        link: "#",
+        text: "Datenschutz",
+        link: "https://www.technologiestiftung-berlin.de/datenschutz",
       },
       {
-        text: "Datenschutz",
-        link: "#",
+        text: "Impressum",
+        link: "https://www.technologiestiftung-berlin.de/impressum",
       },
     ],
   },
