@@ -19,12 +19,12 @@ function NavBar() {
       icon: <NeueTechnologienIcon />,
     },
     {
-      name: "Kultur",
-      icon: <KulturIcon />,
-    },
-    {
       name: "Bildung",
       icon: <BildungIcon />,
+    },
+    {
+      name: "Kultur",
+      icon: <KulturIcon />,
     },
     {
       name: "Prototyping",

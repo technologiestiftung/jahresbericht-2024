@@ -23,3 +23,4 @@ const ExpandedText = ({ content }) => {
 };
 
 export default ExpandedText;
+

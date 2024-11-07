@@ -26,7 +26,6 @@ const content = {
         img: {
           src: "assets/images/nico-placeholder.png",
           alt: "Nicolas Zimmer",
-          fit: "cover",
         },
         vorwort:
           "Die großen - auch digitalen - Herausforderungen unserer Zeit, vom Klimawandel bis zur Künstlichen Intelligenz, verstehen wir als Chance, Berlin gemeinsam zukunftsfähig zu gestalten.",
@@ -39,7 +38,6 @@ const content = {
         img: {
           src: "assets/images/matthias-placeholder.png",
           alt: "Placeholder ALT",
-          fit: "cover",
         },
         vorwort:
           "Dabei setzen wir auf einen agilen, experimentellen Ansatz mit schneller Prototypenentwicklung, um Lösungen zeitnah zu erproben.",
@@ -316,7 +314,6 @@ const content = {
         img: {
           src: "assets/images/placeholder.png",
           alt: "Nicolas Zimmer",
-          fit: "cover",
         },
       },
       {
@@ -328,7 +325,6 @@ const content = {
         img: {
           src: "assets/images/placeholder.png",
           alt: "Nicolas Zimmer",
-          fit: "cover",
         },
       },
       {
@@ -341,7 +337,6 @@ const content = {
         img: {
           src: "assets/images/placeholder.png",
           alt: "Nicolas Zimmer",
-          fit: "cover",
         },
       },
       {
@@ -353,7 +348,6 @@ const content = {
         img: {
           src: "assets/images/placeholder.png",
           alt: "Nicolas Zimmer",
-          fit: "cover",
         },
       },
       {
@@ -365,7 +359,6 @@ const content = {
         img: {
           src: "assets/images/placeholder.png",
           alt: "Nicolas Zimmer",
-          fit: "cover",
         },
       },
     ],

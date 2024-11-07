@@ -1,7 +1,7 @@
 import cn from "./People.module.scss";
-import cx from "classnames";
 import content from "../../content";
 import Button from "../../components/Button";
+import Person from "../../components/Person";
 
 function People() {
   return (
@@ -13,28 +13,9 @@ function People() {
         <h3 dangerouslySetInnerHTML={{ __html: content.people.subtitle }} />
       )}
       {content.people.content.map((item, index) => (
-        <div
-          className={cx(cn.peopleWrapper, index % 2 === 0 ? cn.right : cn.left)}
-          key={item.id}
-        >
-          <div>
-            <div>
-              <div
-                className={cn.image}
-                style={{
-                  backgroundImage: `url(${item.img.src})`,
-                  backgroundSize: item.img.fit,
-                  backgroundPosition: "center center",
-                }}
-              ></div>
-            </div>
-          </div>
-          <div>
-            <p>&quot;{item.intro}&quot;</p>
-            <p>{item.name}</p>
-            <p>{item.position}</p>
-          </div>
-        </div>
+        <span key={item.id}>
+          <Person item={item} align index={index} />
+        </span>
       ))}
       <div className={cn.btnWrapper}>
         <Button to={content.people.link} label={content.people.btnText} />

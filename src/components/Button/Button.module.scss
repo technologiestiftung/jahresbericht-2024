@@ -4,8 +4,8 @@
 :local {
   .btn {
     text-decoration: none;
-    padding: 8px 16px 8px 8px;
-    border: 2px solid var(--Hauptfarbe-TSB-Dunkelblau, #1e3791);
+    padding: $spacing-s $spacing-m $spacing-s $spacing-s;
+    border: $spacing-2xs solid $color-primary-dark;
     background: #fff;
     color: $color-primary-dark;
     transition: $transition-fast;
@@ -16,15 +16,15 @@
     p {
       width: auto;
       margin: 0;
-      transform: translateY(1px);
+      transform: translateY($spacing-3xs);
       @include base.body-bold;
     }
     & > div {
-      margin-right: 4px;
-      height: 16px;
-      width: 16px;
-      min-height: 16px;
-      min-width: 16px;
+      margin-right: $spacing-xs;
+      height: $spacing-m;
+      width: $spacing-m;
+      min-height: $spacing-m;
+      min-width: $spacing-m;
       svg {
         height: 100%;
         width: 100%;

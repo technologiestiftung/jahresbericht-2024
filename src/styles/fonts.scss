@@ -28,7 +28,7 @@
 
 h1 {
   font-family: "Clan Pro";
-  font-size: 80px;
+  font-size: $spacing-5xl;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -40,30 +40,30 @@ h1 {
 }
 h2 {
   font-family: "Clan Pro";
-  font-size: 48px;
+  font-size: $spacing-2xl;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   color: white;
   margin: 0;
   @media screen and (max-width: $absolute-break) {
-    font-size: 32px;
+    font-size: $spacing-xl;
   }
 }
 h3 {
   font-family: "Clan Pro";
-  font-size: 32px;
+  font-size: $spacing-xl;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   margin: 0;
   @media screen and (max-width: $absolute-break) {
-    font-size: 24px;
+    font-size: $spacing-l;
   }
 }
 h4 {
   font-family: "Clan Pro";
-  font-size: 24px;
+  font-size: $spacing-l;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
