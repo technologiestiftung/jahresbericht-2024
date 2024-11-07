@@ -12,9 +12,6 @@
   }
   .wrapper {
     position: relative;
-    @media screen and (min-width: $absolute-break) and (max-width: $max-width-content) {
-      padding: 0 $spacing-l;
-    }
     .bg {
       position: sticky;
       z-index: -1;
@@ -32,11 +29,10 @@
       }
     }
     .content {
-      height: fit-content;
       width: 373px;
       padding-bottom: 40vh;
       height: fit-content;
-      @media screen and (max-width: $absolute-break) {
+      @media screen and (max-width: $max-width-content) {
         width: 100vw;
         padding-bottom: 0;
         margin: 0;
@@ -45,7 +41,7 @@
         background-color: white;
         border: $spacing-xs solid $color-primary-dark;
         padding: $spacing-xl $spacing-l;
-        @media screen and (max-width: $absolute-break) {
+        @media screen and (max-width: $max-width-content) {
           width: calc(100vw - $spacing-2xl);
           margin: 0 $spacing-l;
           padding: $spacing-l;
@@ -57,7 +53,7 @@
         h4 {
           color: $color-primary-dark;
           margin: 3px 0 27px 0;
-          @media screen and (max-width: $absolute-break) {
+          @media screen and (max-width: $max-width-content) {
             margin: 0px 0 $spacing-l 0;
           }
         }
@@ -67,18 +63,18 @@
         }
         a {
           margin-top: 27px;
-          @media screen and (max-width: $absolute-break) {
+          @media screen and (max-width: $max-width-content) {
             margin-top: $spacing-l;
           }
         }
         &.second {
-          @media screen and (min-width: $absolute-break) {
+          @media screen and (min-width: $max-width-content) {
             margin-top: 100vh;
           }
         }
       }
       .bgMobile {
-        @media screen and (max-width: $absolute-break) {
+        @media screen and (max-width: $max-width-content) {
           background-size: cover;
           background-position: center center;
           background-repeat: no-repeat;
@@ -87,12 +83,21 @@
           }
           &.firstBG {
             padding: 120px 0 30px 0;
+            @media screen and (min-width: $absolute-break) {
+              padding: 120px 0 60px 0;
+            }
           }
           &.midBG {
             padding: 30px 0;
+            @media screen and (min-width: $absolute-break) {
+              padding: 60px 0;
+            }
           }
           &.lastBG {
             padding: 30px 0 120px 0;
+            @media screen and (min-width: $absolute-break) {
+              padding: 60px 0 120px 0;
+            }
           }
         }
       }
