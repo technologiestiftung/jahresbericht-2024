@@ -9,7 +9,7 @@ function Outro() {
       <div className={cn.content}>
         {content.outro.content.map((item, index) => (
           <div key={index}>
-            <h4>{item.title}</h4>
+            <h3>{item.title}</h3>
             <p dangerouslySetInnerHTML={{ __html: item.content }} />
             <Button to={item.link} label={item.btnText} />
           </div>

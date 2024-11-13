@@ -60,9 +60,13 @@
               padding: $spacing-xl $spacing-l;
               border: $spacing-xs solid $color-primary-dark;
               width: 30%;
-              h4 {
+              h3 {
                 color: $color-primary-dark;
+                font-size: $spacing-l;
                 margin-bottom: 34px;
+                @media screen and (max-width: $absolute-break) {
+                  font-size: 20px;
+                }
               }
               & > p {
                 color: $color-primary-dark !important;

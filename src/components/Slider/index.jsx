@@ -88,7 +88,7 @@ const Slider = () => {
                 }}
               >
                 <div className={cn.content}>
-                  <h4>{slide.title}</h4>
+                  <h3>{slide.title}</h3>
                   <p dangerouslySetInnerHTML={{ __html: slide.content }} />
                   <Button to={slide.link} label={slide.btnText} />
                 </div>

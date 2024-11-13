@@ -50,8 +50,9 @@
           color: $color-primary-dark !important;
           @include base.body-bold;
         }
-        h4 {
+        h3 {
           color: $color-primary-dark;
+          font-size: $spacing-l;
           margin: 3px 0 27px 0;
           @media screen and (max-width: $max-width-content) {
             margin: 0px 0 $spacing-l 0;
