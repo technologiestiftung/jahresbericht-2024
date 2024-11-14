@@ -60,6 +60,7 @@ const content = {
           src: "assets/images/placeholder.png",
           alt: "Placeholder ALT",
         },
+        imgPosition: "right",
       },
       {
         title: "Q2/24 - April",
@@ -71,6 +72,7 @@ const content = {
           src: "assets/images/placeholder.png",
           alt: "Placeholder ALT",
         },
+        imgPosition: "right",
       },
       {
         title: "Q2/24 - Mai",
@@ -82,6 +84,7 @@ const content = {
           src: "assets/images/placeholder.png",
           alt: "Placeholder ALT",
         },
+        imgPosition: "left",
       },
       {
         title: "Q3/24 - Juli",
@@ -93,6 +96,7 @@ const content = {
           src: "assets/images/placeholder.png",
           alt: "Placeholder ALT",
         },
+        imgPosition: "left",
       },
       {
         title: "Q3/24 - September",
@@ -104,6 +108,7 @@ const content = {
           src: "assets/images/placeholder.png",
           alt: "Placeholder ALT",
         },
+        imgPosition: "left",
       },
       {
         title: "Q3/24 - Oktober",
@@ -115,6 +120,7 @@ const content = {
           src: "assets/images/placeholder.png",
           alt: "Placeholder ALT",
         },
+        imgPosition: "right",
       },
       {
         title: "Q4/24 - Dezember",
@@ -126,6 +132,7 @@ const content = {
           src: "assets/images/placeholder.png",
           alt: "Placeholder ALT",
         },
+        imgPosition: "right",
       },
     ],
   },

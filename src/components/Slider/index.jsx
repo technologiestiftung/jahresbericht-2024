@@ -53,7 +53,7 @@ const Slider = () => {
         <h2 dangerouslySetInnerHTML={{ __html: title }} />
       </div>
       <div className={cn.sliderWrapper} {...handlers}>
-        {/* Arrow left */}
+        {/* Pfeil links */}
         <div
           aria-label='Pfeil links'
           className={cn.arrow}
@@ -68,9 +68,7 @@ const Slider = () => {
         >
           <Arrow />
         </div>
-        {/* Slider content container */}
         <div className={cn.sliderContentContainer}>
-          {/* Slider content */}
           <div
             className={cn.contentSlider}
             style={{
@@ -83,24 +81,42 @@ const Slider = () => {
                 className={cn.slide}
                 key={index}
                 ref={index === 0 ? sliderRef : null}
-                style={{
-                  flexDirection: index % 2 === 0 ? "row" : "row-reverse",
-                }}
               >
-                <div className={cn.content}>
-                  <h3>{slide.title}</h3>
-                  <p dangerouslySetInnerHTML={{ __html: slide.content }} />
-                  <Button to={slide.link} label={slide.btnText} />
+                {["left", "right"].map(side => (
+                  <div key={side} className={cn[`${side}Container`]}>
+                    {slide.imgPosition === side ? (
+                      <div
+                        className={cn.bgImage}
+                        style={{ backgroundImage: `url(${slide.img.src})` }}
+                      />
+                    ) : (
+                      <div className={cn.content}>
+                        <h3>{slide.title}</h3>
+                        <p
+                          dangerouslySetInnerHTML={{ __html: slide.content }}
+                        />
+                        <Button to={slide.link} label={slide.btnText} />
+                      </div>
+                    )}
+                  </div>
+                ))}
+
+                <div className={cn.mobile}>
+                  <div
+                    className={cn.bgImage}
+                    style={{ backgroundImage: `url(${slide.img.src})` }}
+                  />
+                  <div className={cn.content}>
+                    <h3>{slide.title}</h3>
+                    <p dangerouslySetInnerHTML={{ __html: slide.content }} />
+                    <Button to={slide.link} label={slide.btnText} />
+                  </div>
                 </div>
-                <div
-                  className={cn.bgImage}
-                  style={{ backgroundImage: `url(${slide.img.src})` }}
-                ></div>
               </div>
             ))}
           </div>
         </div>
-        {/* Arrow right */}
+        {/* Pfeil rechts */}
         <div
           aria-label='Pfeil rechts'
           className={cn.arrow}
