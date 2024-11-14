@@ -41,17 +41,13 @@
       align-items: center;
       margin-left: calc(($max-width-content - $larger-content) / 2);
 
-      @media screen and (max-width: $absolute-break) {
+      @media screen and (max-width: $max-width-content) {
         box-sizing: border-box;
         width: 100%;
         margin: 0;
         display: flex;
         gap: 0;
         position: relative;
-      }
-      @media screen and (min-width: $absolute-break) and (max-width: $max-width-content) {
-        width: 100%;
-        margin: 0;
       }
 
       .sliderContentContainer {
@@ -65,7 +61,7 @@
           transform: translateX(0);
           transition: $transition-slow;
 
-          @media screen and (max-width: $absolute-break) {
+          @media screen and (max-width: $max-width-content) {
             max-height: 100%;
           }
 
@@ -76,14 +72,14 @@
 
             .leftContainer {
               width: 33%;
-              @media screen and (max-width: $absolute-break) {
+              @media screen and (max-width: $max-width-content) {
                 width: 100%;
                 display: none;
               }
             }
             .rightContainer {
               width: 66%;
-              @media screen and (max-width: $absolute-break) {
+              @media screen and (max-width: $max-width-content) {
                 width: 100%;
                 display: none;
               }
@@ -109,12 +105,9 @@
                 margin-bottom: $spacing-xl !important;
                 @include base.body-intro;
               }
-              @media screen and (max-width: $absolute-break) {
+              @media screen and (max-width: $max-width-content) {
                 width: 100%;
                 height: fit-content;
-              }
-              @media screen and (min-width: $absolute-break) and (max-width: $max-width-content) {
-                width: 100%;
               }
             }
             .bgImage {
@@ -131,7 +124,7 @@
                 background-size: 130%;
               }
 
-              @media screen and (max-width: $absolute-break) {
+              @media screen and (max-width: $max-width-content) {
                 width: 100%;
                 height: 240px;
                 margin-bottom: $spacing-l;
@@ -141,14 +134,10 @@
                 height: 360px;
               }
             }
-            @media screen and (min-width: $absolute-break) and (max-width: $max-width-content) {
-              flex-direction: column-reverse !important;
-              justify-content: flex-end;
-            }
 
             .mobile {
               display: none;
-              @media screen and (max-width: $absolute-break) {
+              @media screen and (max-width: $max-width-content) {
                 width: 100%;
                 height: 100%;
                 display: block;
@@ -163,7 +152,7 @@
         &:first-of-type {
           transform: scaleX(-1);
         }
-        @media screen and (max-width: $absolute-break) {
+        @media screen and (max-width: $max-width-content) {
           display: none;
         }
       }
@@ -176,7 +165,7 @@
       p {
         margin: 0;
       }
-      @media screen and (max-width: $absolute-break) {
+      @media screen and (max-width: $max-width-content) {
         display: none;
       }
     }
@@ -190,7 +179,7 @@
         left: auto;
         right: 0;
       }
-      @media screen and (max-width: $absolute-break) {
+      @media screen and (max-width: $max-width-content) {
         display: block;
         position: absolute;
         top: 100px;
@@ -199,6 +188,10 @@
         height: $spacing-2xl;
         background-color: $color-white;
         box-shadow: $drop-shadow;
+      }
+
+      @media screen and (min-width: $absolute-break) and (max-width: $max-width-content) {
+        top: 160px;
       }
     }
   }
