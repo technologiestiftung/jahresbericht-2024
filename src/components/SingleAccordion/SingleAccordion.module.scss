@@ -6,17 +6,16 @@
     width: 100%;
     .clickable {
       display: flex;
-      justify-content: flex-start;
+      justify-content: space-between;
       align-items: center;
       border-top: $spacing-2xs solid $color-primary-dark;
       background: rgba(30, 55, 145, 0.08);
       cursor: pointer;
-      padding: $spacing-s;
+      padding: $spacing-s $spacing-l;
       user-select: none;
       & > img {
         width: 30px;
         height: 30px;
-        margin-right: 5px;
         transition: $transition-slow;
         &.turned {
           transform: rotate(90deg);
@@ -25,7 +24,6 @@
       & > div {
         width: 30px;
         height: 30px;
-        margin-right: 5px;
         transition: $transition-slow;
         &.turned {
           transform: rotate(90deg);
@@ -43,16 +41,17 @@
     .panel {
       transition: $transition-slow;
       overflow: hidden;
-      background: $bg-color;
+      background: $bg-color-light !important;
+      padding-top: $spacing-l;
+      padding-bottom: $spacing-l;
+      height: 100%;
 
       .paragraph {
-        padding: $spacing-l 0;
+        padding: 0px $spacing-s 0px $spacing-l;
         max-width: 552px;
         p {
           height: 100%;
           color: $color-primary-dark !important;
-          border-left: $spacing-2xs solid $color-primary-dark !important;
-          padding: 0 $spacing-2xl !important;
           @include base.body;
         }
       }
