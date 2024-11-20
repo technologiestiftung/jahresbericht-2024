@@ -31,6 +31,12 @@ function SingleAccordion({ content, title = "Vorwort lesen" }) {
     }
   }, []);
 
+  window.addEventListener("resize", () => {
+    if (panelEl.current) {
+      setScrollHeight(panelEl.current.scrollHeight);
+    }
+  });
+
   return (
     <div className={cn.accordion} id={`accordion-${Math.random()}`}>
       <div
