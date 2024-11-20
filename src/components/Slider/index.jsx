@@ -91,7 +91,7 @@ const Slider = () => {
                       />
                     ) : (
                       <div className={cn.content}>
-                        <h3>{slide.title}</h3>
+                        <h3 dangerouslySetInnerHTML={{ __html: slide.title }} />
                         <p
                           dangerouslySetInnerHTML={{ __html: slide.content }}
                         />
@@ -107,7 +107,7 @@ const Slider = () => {
                     style={{ backgroundImage: `url(${slide.img.src})` }}
                   />
                   <div className={cn.content}>
-                    <h3>{slide.title}</h3>
+                    <h3 dangerouslySetInnerHTML={{ __html: slide.title }} />
                     <p dangerouslySetInnerHTML={{ __html: slide.content }} />
                     <Button to={slide.link} label={slide.btnText} />
                   </div>

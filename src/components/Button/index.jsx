@@ -7,7 +7,8 @@ function Button({ to, label = "Hier gehts lang..." }) {
       <div>
         <Pointer />
       </div>
-      <p>{label}</p>
+      {/* <p>{label}</p> */}
+      <p dangerouslySetInnerHTML={{ __html: label }} />
     </a>
   );
 }

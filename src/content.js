@@ -4,22 +4,21 @@ const content = {
     logo: {
       src: "assets/logos/TSB-Schriftzug-White.svg",
       alt: "TSB Logo Weiß",
-      copyright:
-        'Photo by <a href="https://unsplash.com/@florianwehde?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Florian Wehde</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>',
+      copyright: "",
     },
     header: {
       src: "assets/logos/TSB-Logo.svg",
       alt: "TSB Logo Weiß",
-      copyright:
-        'Photo by <a href="https://unsplash.com/@florianwehde?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Florian Wehde</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>',
+      copyright: "",
     },
   },
   offenheit: {
     title: "Wir schaffen Offenheit",
-    text: "Wir sind die Technologiestiftung Berlin - rund 80 Köpfe, die sich für die gemeinwohlorientierte Digitalisierung unserer Hauptstadt einsetzen. Wie wir heute das Berlin von morgen gestalten, darauf blicken wir in unserem Jahresbericht 2024.",
+    text: "Wir sind die Technologiestiftung Berlin &ndash; rund 80 Köpfe, die sich für die gemeinwohlorientierte Digitalisierung unserer Hauptstadt einsetzen. Wie wir heute das Berlin von morgen gestalten, darauf blicken wir in unserem Jahresbericht 2024.",
   },
   vorwort: {
-    title: "Schön, dass ihr hier seid.<br>Wir sind es auch - seit 30 Jahren.",
+    title:
+      "Schön, dass ihr hier seid.<br>Wir sind es auch &ndash; seit 30 Jahren.",
     people: [
       {
         name: "Nicolas Zimmer",
@@ -28,7 +27,7 @@ const content = {
           alt: "Nicolas Zimmer",
         },
         vorwort:
-          "Die großen - auch digitalen - Herausforderungen unserer Zeit, vom Klimawandel bis zur Künstlichen Intelligenz, verstehen wir als Chance, Berlin gemeinsam zukunftsfähig zu gestalten.",
+          "Die großen &ndash; auch digitalen &ndash; Herausforderungen unserer Zeit, vom Klimawandel bis zur Künstlichen Intelligenz, verstehen wir als Chance, Berlin gemeinsam zukunftsfähig zu gestalten.",
         position: "Vorstandsvorsitzender der Technologiestiftung Berlin",
         content:
           "Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Abgeschieden wohnen sie in Buchstabhausen an der Küste des Semantik, eines großen Sprachozeans. Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Abgeschieden wohnen sie in Buchstabhausen an der Küste des Semantik, eines großen Sprachozeans.",
@@ -51,7 +50,7 @@ const content = {
     title: "Unser Jahr im Rückblick",
     content: [
       {
-        title: "Q1/24 - Januar",
+        title: "Q1/24 &ndash; Januar",
         content:
           "Fragen an die Berliner Politik? Parla antwortet: Unsere KI-Assistenz macht zehntausende Dokumente aus dem Berliner Abgeordnetenhaus durchsuchbar.",
         link: "https://www.technologiestiftung-berlin.de/profil/blog/3-fragen-an-die-berliner-politik-beantwortet-mit-ki-tool-parla",
@@ -63,11 +62,11 @@ const content = {
         imgPosition: "right",
       },
       {
-        title: "Q2/24 - April",
+        title: "Q2/24 &ndash; April",
         content:
-          "Wir feiern den Girls'Day: Mit Mädchen ab 13 Jahren haben unsere Kolleg:innen am bundesweiten Aktionstag fleißig programmiert und an Hardware getüftelt.",
+          "Wir feiern den Girls&rsquo;Day: Mit Mädchen ab 13 Jahren haben unsere Kolleg:innen am bundesweiten Aktionstag fleißig programmiert und an Hardware getüftelt.",
         link: "https://www.technologiestiftung-berlin.de/profil/blog/girlsday-was-wir-ueber-das-arbeiten-im-it-bereich-gelernt-haben",
-        btnText: "Mehr zum Girls'Day",
+        btnText: "Mehr zum Girls&rsquo;Day",
         img: {
           src: "assets/images/placeholder.png",
           alt: "Placeholder ALT",
@@ -75,7 +74,7 @@ const content = {
         imgPosition: "right",
       },
       {
-        title: "Q2/24 - Mai",
+        title: "Q2/24 &ndash; Mai",
         content:
           "Wie sieht das digitale Berlin in echt und in Farbe aus? Das zeigen unsere sechs Bühnenbeiträge auf der re:publica 2024.",
         link: "https://www.technologiestiftung-berlin.de/profil/blog/rueckblick-auf-die-republica-2024-mit-dem-citylab",
@@ -87,9 +86,9 @@ const content = {
         imgPosition: "left",
       },
       {
-        title: "Q3/24 - Juli",
+        title: "Q3/24 &ndash; Juli",
         content:
-          "Startschuss für die Post-COVID-Challenge vom Bundesministerium des Innern und für Heimat! Mit dabei in der ersten Phase: Unsere Daten-Enthusiast:innen im Team mit Medizin&shy;informatiker:&shy;innen der Charité.",
+          "Startschuss für die Post-COVID-Challenge vom Bundesministerium des Innern und für Heimat! Mit dabei in der ersten Phase: Unsere Daten-Enthusiast:innen im Team mit Medizininformatiker:innen der Charité.",
         link: "https://www.linkedin.com/feed/update/urn:li:activity:7223712317065043971",
         btnText: "Zum Team-Post mit der Charité",
         img: {
@@ -99,7 +98,7 @@ const content = {
         imgPosition: "left",
       },
       {
-        title: "Q3/24 - September",
+        title: "Q3/24 &ndash; September",
         content:
           "Ein KI-gestütztes Vorhersagemodelle für die Bewässerung unserer Stadtbäume? Ein ausgezeichnetes Projekt, fand der bundesweit wichtigste Klimawandel-Wettbewerb „Blauer Kompass“ und nominierte unser Projekt QTrees für den Publikumspreis.",
         link: "https://www.linkedin.com/feed/update/urn:li:activity:7243948883389595648",
@@ -111,9 +110,9 @@ const content = {
         imgPosition: "left",
       },
       {
-        title: "Q3/24 - Oktober",
+        title: "Q3/24 &ndash; Oktober",
         content:
-          "Und noch eine Runde: Unser Pitch beim Bundesministerium des Innern und für Heimat hat überzeugt -  weiter geht’s mit fünf verbleibenden Teams in der zweiten Phase der Post-COVID-Challenge!",
+          "Und noch eine Runde: Unser Pitch beim Bundesministerium des Innern und für Heimat hat überzeugt &ndash;  weiter geht’s mit fünf verbleibenden Teams in der zweiten Phase der Post-COVID-Challenge!",
         link: "https://www.technologiestiftung-berlin.de/profil/blog/gesundheitsdaten-oeffnen-und-schuetzen-ein-gespraech-zur-post-covid-challenge",
         btnText: "Mehr zu unserem Post-COVID-Datenmodell",
         img: {
@@ -123,9 +122,9 @@ const content = {
         imgPosition: "right",
       },
       {
-        title: "Q4/24 - Dezember",
+        title: "Q4/24 &ndash; Dezember",
         content:
-          "Ho ho ho, was bringt Berlin noch mehr Datenvergnügen? Unser beliebter Berliner Weihnachts&shy;marktfinder, jetzt auch auf englisch und mit neuer Suchfunktion.",
+          "Ho ho ho, was bringt Berlin noch mehr Datenvergnügen? Unser beliebter Berliner Weihnachtsmarktfinder, jetzt auch auf englisch und mit neuer Suchfunktion.",
         link: "https://weihnachtsmaerkte.odis-berlin.de/",
         btnText: "Zu unserem Weihnachtsmarktfinder",
         img: {
@@ -140,7 +139,7 @@ const content = {
     {
       id: "smartCity",
       title: "Smart City",
-      text: "Wir engagieren uns für ein Berlin, das nicht nur digitaler wird, sondern auch offener und lebenswerter. Ein Berlin, das Orte für echte Begegnungen schafft - und gleichzeitig eine Datenlage, mit der die städtische Verwaltung effizient und zukunftsfähig arbeiten kann.",
+      text: "Wir engagieren uns für ein Berlin, das nicht nur digitaler wird, sondern auch offener und lebenswerter. Ein Berlin, das Orte für echte Begegnungen schafft &ndash; und gleichzeitig eine Datenlage, mit der die städtische Verwaltung effizient und zukunftsfähig arbeiten kann.",
       projects: [
         {
           id: "smartCity1",
@@ -171,7 +170,7 @@ const content = {
     {
       id: "neueTechnologien",
       title: "Neue Technologien",
-      text: "Innovationskraft für Berlin: Neue Technologien halten überall Einzug - und prägen auch Berlins lebendige Wissenschafts- und Wirtschaftsszene. Mit unseren Studien stellen wir sicher, dass Innovationsfaktoren frühzeitig identifiziert werden. Ob beim Netzausbau oder dem Einsatz von Künstlicher Intelligenz: Seit unseren Anfängen arbeiten wir dafür, Berlin als dynamischer Innovationsstandort weiterzuentwickeln.",
+      text: "Innovationskraft für Berlin: Neue Technologien halten überall Einzug &ndash; und prägen auch Berlins lebendige Wissenschafts- und Wirtschaftsszene. Mit unseren Studien stellen wir sicher, dass Innovationsfaktoren frühzeitig identifiziert werden. Ob beim Netzausbau oder dem Einsatz von Künstlicher Intelligenz: Seit unseren Anfängen arbeiten wir dafür, Berlin als dynamischer Innovationsstandort weiterzuentwickeln.",
       projects: [
         {
           id: "neueTechnologien1",
@@ -189,13 +188,13 @@ const content = {
     {
       id: "bildung",
       title: "Bildung",
-      text: "Digitale Kompetenz und Bildung sind entscheidend für die Zukunft - und sollten keine Frage von Alter, Herkunft oder Vorkenntnissen sein. Mit verschiedenen Wissensangeboten fördern wir den Zugang zu Technologien und Forschung. Dazu öffnen wir regelmäßig unsere Räume - dieses Jahr auch für die Jüngsten beim deutschlandweiten Girls'Day.",
+      text: "Digitale Kompetenz und Bildung sind entscheidend für die Zukunft &ndash; und sollten keine Frage von Alter, Herkunft oder Vorkenntnissen sein. Mit verschiedenen Wissensangeboten fördern wir den Zugang zu Technologien und Forschung. Dazu öffnen wir regelmäßig unsere Räume &ndash; dieses Jahr auch für die Jüngsten beim deutschlandweiten Girls&rsquo;Day.",
       projects: [
         {
           id: "bildung1",
           title: "Veranstaltungsreihen mit rbb24 Inforadio",
           paragraph:
-            "Woran forscht Berlin und wie beeinflussen wissenschaftliche Erkenntnisse unseren Alltag - von grünen Baustoffen bis KI-gestützten Personalverfahren?    Unsere monatlichen Veranstaltungsreihen in Kooperation mit rbb24 Inforadio zeigen es: Im Forum Wissenswerte stellen sich seit 2001 drei Expert:innen den Fragen von Moderator:in und Publikum, während bei Soup & Science seit 2018 jeweils eine Wissenschaftlerin ihre Forschung vorstellt. Beide Formate sind live vor Ort oder im Nachhinein zum Anhören frei zugänglich.",
+            "Woran forscht Berlin und wie beeinflussen wissenschaftliche Erkenntnisse unseren Alltag &ndash; von grünen Baustoffen bis KI-gestützten Personalverfahren?    Unsere monatlichen Veranstaltungsreihen in Kooperation mit rbb24 Inforadio zeigen es: Im Forum Wissenswerte stellen sich seit 2001 drei Expert:innen den Fragen von Moderator:in und Publikum, während bei Soup & Science seit 2018 jeweils eine Wissenschaftlerin ihre Forschung vorstellt. Beide Formate sind live vor Ort oder im Nachhinein zum Anhören frei zugänglich.",
           img: {
             src: "assets/images/placeholder.png",
             alt: "Placeholder ALT",
@@ -213,7 +212,7 @@ const content = {
           id: "kultur1",
           title: "kulturBdigital",
           paragraph:
-            "kulturBdigital ist das zentrale Netzwerk für alles Digitale in Berlins Kulturszene. Hier treffen sich Akteur:innen aus allen Sparten, um ihr Wissen zu teilen und weiterzutragen - sei es zu KI-gestützter Bild- und Textgestaltung oder digitaler Barrierefreiheit. Gerade mit begrenzten Ressourcen ist Kreativität gefragt, wenn es darum geht, mit den technologischen Entwicklungen Schritt zu halten. Deshalb bieten wir mit kulturBdigital praxisnahe Formate wie Tool-Cafés, Hackathons oder Leitfäden an. Bei der sechsten Jahreskonferenz zeigte sich dieses Jahr einmal mehr: Berlins Kulturszene braucht und will Strategien für eine inklusive, digitale Zukunft.<br><br>Eine Kooperation der Technologiestiftung Berlin und der Senatsverwaltung für Kultur und Gesellschaftlichen Zusammenhalt",
+            "kulturBdigital ist das zentrale Netzwerk für alles Digitale in Berlins Kulturszene. Hier treffen sich Akteur:innen aus allen Sparten, um ihr Wissen zu teilen und weiterzutragen &ndash; sei es zu KI-gestützter Bild- und Textgestaltung oder digitaler Barrierefreiheit. Gerade mit begrenzten Ressourcen ist Kreativität gefragt, wenn es darum geht, mit den technologischen Entwicklungen Schritt zu halten. Deshalb bieten wir mit kulturBdigital praxisnahe Formate wie Tool-Cafés, Hackathons oder Leitfäden an. Bei der sechsten Jahreskonferenz zeigte sich dieses Jahr einmal mehr: Berlins Kulturszene braucht und will Strategien für eine inklusive, digitale Zukunft.<br><br>Eine Kooperation der Technologiestiftung Berlin und der Senatsverwaltung für Kultur und Gesellschaftlichen Zusammenhalt",
           link: "https://kultur-b-digital.de",
           img: {
             src: "assets/images/placeholder.png",
@@ -244,7 +243,7 @@ const content = {
           id: "prototyping2",
           title: "Gieß den Kiez",
           paragraph:
-            "Welches Wissen steckt in der Stadt Berlin? Natürlich einiges über den urbanen Raum - und genau diese Geodaten werden mit dem GeoExplorer jetzt schneller auffindbar. Ob zur Verteilung von erneuerbaren Energien oder Freizeitflächen: Standortgenaue Informationen filtert der GeoExplorer mithilfe einer KI-gestützten Suche nach Relevanz, beschreibt ihre Inhalte und unterstützt so die Berliner Stadtentwicklung und Forschung.<br><br>Gefördert von der Senatskanzlei Berlin",
+            "Welches Wissen steckt in der Stadt Berlin? Natürlich einiges über den urbanen Raum &ndash; und genau diese Geodaten werden mit dem GeoExplorer jetzt schneller auffindbar. Ob zur Verteilung von erneuerbaren Energien oder Freizeitflächen: Standortgenaue Informationen filtert der GeoExplorer mithilfe einer KI-gestützten Suche nach Relevanz, beschreibt ihre Inhalte und unterstützt so die Berliner Stadtentwicklung und Forschung.<br><br>Gefördert von der Senatskanzlei Berlin",
           link: "https://geoexplorer.odis-berlin.de/",
           img: {
             src: "assets/images/placeholder.png",
@@ -256,7 +255,7 @@ const content = {
           id: "prototyping3",
           title: "Parla",
           paragraph:
-            "Berlin ist eine Millionenstadt - mit mindestens genauso vielen Fragen. Wann wird Bauprojekt XY abgeschlossen? Was tut mein Bezirk für mehr Verkehrsberuhigung? Und wie bekomme ich Antworten auf meine Fragen, ohne Berge von öffentlichen Dokumenten zu durchwühlen? Darauf weiß unser Anfang 2024 gestartetes KI-Tool Parla ein paar Antworten: Unter Einsatz eines umfassenden Large-Language-Modells durchsucht Parla Dokumente des Berliner Abgeordnetenhaus, verlinkt die relevantestes Suchergebnisse und liefert eine erste, KI-generierte Antwort auf Fragen zur aktuellen Wahlperiode. Das Medienecho von Deutschlandfunk & Co beweist: KI und Verwaltung, das hat Potenzial.<br><br>Gefördert von der Senatskanzlei Berlin",
+            "Berlin ist eine Millionenstadt &ndash; mit mindestens genauso vielen Fragen. Wann wird Bauprojekt XY abgeschlossen? Was tut mein Bezirk für mehr Verkehrsberuhigung? Und wie bekomme ich Antworten auf meine Fragen, ohne Berge von öffentlichen Dokumenten zu durchwühlen? Darauf weiß unser Anfang 2024 gestartetes KI-Tool Parla ein paar Antworten: Unter Einsatz eines umfassenden Large-Language-Modells durchsucht Parla Dokumente des Berliner Abgeordnetenhaus, verlinkt die relevantestes Suchergebnisse und liefert eine erste, KI-generierte Antwort auf Fragen zur aktuellen Wahlperiode. Das Medienecho von Deutschlandfunk & Co beweist: KI und Verwaltung, das hat Potenzial.<br><br>Gefördert von der Senatskanzlei Berlin",
           link: "https://parla.berlin",
           img: {
             src: "assets/images/placeholder.png",
@@ -269,7 +268,7 @@ const content = {
     {
       id: "weitereAktivitaeten",
       title: "Weitere Aktivitäten",
-      text: "Startup-Metropole und Universitäts-Mekka: Berlin als herausragenden Standort für Wissenschaft und Wirtschaft zu stärken, dazu tragen wir kontinuierlich bei - mit der Langen Nacht der Wissenschaften, einer durch die Stiftung Analytische Röntgenphysik geförderten Stiftungsprofessur an der Technischen Universität Berlin und dem Innovationspreis Berlin Brandenburg.",
+      text: "Startup-Metropole und Universitäts-Mekka: Berlin als herausragenden Standort für Wissenschaft und Wirtschaft zu stärken, dazu tragen wir kontinuierlich bei &ndash; mit der Langen Nacht der Wissenschaften, einer durch die Stiftung Analytische Röntgenphysik geförderten Stiftungsprofessur an der Technischen Universität Berlin und dem Innovationspreis Berlin Brandenburg.",
       projects: [
         {
           id: "weitereAktivitaeten1",
@@ -315,7 +314,7 @@ const content = {
         id: "person_1",
         name: "Edith",
         position:
-          "Abteilungsleitung Zentrale Dienste / kommissarische Bereichsleitung Compliance - seit 24 Jahren dabei",
+          "Abteilungsleitung Zentrale Dienste / kommissarische Bereichsleitung Compliance &ndash; seit 24 Jahren dabei",
         intro:
           "Dass sie das tut, was sie immer getan hat, irgendwie sich nämlich weiterentwickeln. Das sie eine vernünftige Grundlage hat, dass sie wirklich sozusagen auf Ewigkeit angelegt ist und das sie unabhängig bleibt.",
         img: {
@@ -326,7 +325,7 @@ const content = {
       {
         id: "person_2",
         name: "Elona",
-        position: "UX/UI Web Designerin - seit 3 Monaten dabei",
+        position: "UX/UI Web Designerin &ndash; seit 3 Monaten dabei",
         intro:
           "Ich wünsche der Technologiestiftung eigentlich, dass sie so tolle Projekte, wie sie auch schon ins Leben gerufen haben weiter entwickeln und gestalten können und weiterhin einen Mehrwert für die Stadt Berlin dahingehend liefern können.",
         img: {
@@ -338,7 +337,7 @@ const content = {
         id: "person_3",
         name: "Gesa",
         position:
-          "Büroleitung, Persönliche Referentin des Vorstandsvorsitzenden - seit 6 Monaten dabei",
+          "Büroleitung, Persönliche Referentin des Vorstandsvorsitzenden &ndash; seit 6 Monaten dabei",
         intro:
           "Ich wünsche mir für die Zukunft der Technologiestiftung einen riesigen Impact mit guter Laune. Mein Wunsch ist, dass wir als Technologiestiftungsteam zusammen mit den Berliner:innen gut gelaunt, und zum Wohle aller vorandigitalisieren.",
         img: {
@@ -349,7 +348,8 @@ const content = {
       {
         id: "person_4",
         name: "Annette",
-        position: "Abteilungsleitung Kultur & Bildung - seit 27 Jahren dabei",
+        position:
+          "Abteilungsleitung Kultur & Bildung &ndash; seit 27 Jahren dabei",
         intro:
           "Weiterhin so tolle Kolleginnen mit ganz unterschiedlichen Experten. Entsprechend engagierte Kooperationspartnerinnen, mit denen wir zusammen tolle Projekte für Berlin entwickeln.",
         img: {
@@ -360,7 +360,7 @@ const content = {
       {
         id: "person_5",
         name: "Dieter",
-        position: "Referent Stiftungsrecht - seit 25 Jahren dabei",
+        position: "Referent Stiftungsrecht &ndash; seit 25 Jahren dabei",
         intro:
           "Also was ich mir für eine Stiftung in Zukunft Wünsche, ist, dass wir deutlich mehr Stiftungskapital haben und natürlich, dass wir weiterhin so viele frische junge Leute an uns binden können, die uns helfen mit unseren Ideen.",
         img: {
