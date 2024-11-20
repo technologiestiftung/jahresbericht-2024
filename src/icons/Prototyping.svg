@@ -1,4 +1,6 @@
-<svg width="204" height="204" viewBox="0 0 204 204" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg role="img" aria-labelledby="svgTitle svgDesc" width="204" height="204" viewBox="0 0 204 204" fill="none" xmlns="http://www.w3.org/2000/svg">
+<title id="svgTitle">Prototyping Icon</title>
+<desc id="svgDesc">Eine Outline-Illustration: Ein Monitor, ein Smartphone und ein Play-Button</desc>
 <path d="M66.25 170.875V144.64V165.509" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M49 170.875H82.125" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M150.333 118H117.667C115.089 118 113 121.731 113 126.333V184.667C113 189.269 115.089 193 117.667 193H150.333C152.911 193 155 189.269 155 184.667V126.333C155 121.731 152.911 118 150.333 118Z" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>

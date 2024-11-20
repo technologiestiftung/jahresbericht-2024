@@ -1,8 +1,8 @@
+import SmartCityIcon from "../../icons/SmartCity.svg";
+import NeueTechnologienIcon from "../../icons/NeueTechnologien.svg";
 import BildungIcon from "../../icons/Bildung.svg";
 import KulturIcon from "../../icons/Kultur.svg";
-import NeueTechnologienIcon from "../../icons/NeueTechnologien.svg";
 import ProtoypingIcon from "../../icons/Prototyping.svg";
-import SmartCityIcon from "../../icons/SmartCity.svg";
 import WeiteresIcon from "../../icons/Weiteres.svg";
 import cn from "./Icons.module.scss";
 
