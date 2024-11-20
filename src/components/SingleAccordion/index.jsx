@@ -31,6 +31,12 @@ function SingleAccordion({ content, title = "Vorwort lesen" }) {
     }
   }, []);
 
+  useEffect(() => {
+    if (panelEl.current) {
+      setScrollHeight(panelEl.current.scrollHeight);
+    }
+  }, [isOpen]);
+
   window.addEventListener("resize", () => {
     if (panelEl.current) {
       setScrollHeight(panelEl.current.scrollHeight);
