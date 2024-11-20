@@ -1,6 +1,6 @@
-import cn from "./Person.module.scss";
 import cx from "classnames";
 import SingleAccordion from "../../components/SingleAccordion";
+import cn from "./Person.module.scss";
 
 function Person({ item, align, accordion, index }) {
   return (
@@ -8,7 +8,7 @@ function Person({ item, align, accordion, index }) {
       className={
         align
           ? cx(cn.peopleWrapper, index % 2 === 0 ? cn.right : cn.left)
-          : cn.peopleWrapper
+          : cx(cn.peopleWrapper, accordion ? cn.right : cn.peopleWrapper)
       }
     >
       <div>
@@ -25,7 +25,11 @@ function Person({ item, align, accordion, index }) {
         <p>&quot;{item.vorwort || item.intro}&quot;</p>
         <p>{item.name}</p>
         <p>{item.position}</p>
-        {!!accordion && <SingleAccordion content={item.content} />}
+        {!!accordion && (
+          <div className={cn.accordionWrapper}>
+            <SingleAccordion content={item.content} />
+          </div>
+        )}
       </div>
     </div>
   );
