@@ -7,28 +7,55 @@ function Sticky({ content, title }) {
   const sectionRef = useRef(null);
   const firstContainerRef = useRef(null);
   const secondContainerRef = useRef(null);
-  const [isFirstVisible, setIsFirstVisible] = useState(true);
+  const thirdContainerRef = useRef(null);
+  const [visible, setVisible] = useState("first");
+  const topPadding = 160;
+  const mobilePadding = 1;
+  const [margins, setMargins] = useState({
+    first: 0,
+    second: 0,
+    third: 0,
+  });
 
-  const testing = false;
+  const RenderIMG = () => {
+    const setIndex = visible === "first" ? 0 : visible === "second" ? 1 : 2;
+    if (window.innerWidth < 1280)
+      return (
+        <div
+          className={cn.bg}
+          style={{
+            backgroundImage: `url('${content[setIndex].img.src}')`,
+            backgroundSize: title === "Prototyping" ? "contain" : "cover",
+          }}
+        />
+      );
+    return (
+      <div className={cn.bg}>
+        <img alt={content[setIndex].img.alt} src={content[setIndex].img.src} />
+        {content[setIndex].img.copyright && (
+          <div className={cn.copyright}>
+            <p>{content[setIndex].img.copyright}</p>
+          </div>
+        )}
+      </div>
+    );
+  };
 
   useEffect(() => {
     const handleScroll = () => {
-      if (
-        content?.length === 2 &&
-        firstContainerRef.current &&
-        secondContainerRef.current
-      ) {
-        const firstRect = firstContainerRef.current.getBoundingClientRect();
-        const secondRect = secondContainerRef.current.getBoundingClientRect();
-        const windowHeight =
-          window.innerHeight || document.documentElement.clientHeight;
-
-        if (firstRect.bottom >= 0 && firstRect.top <= windowHeight) {
-          setIsFirstVisible(true);
-        } else if (secondRect.top <= windowHeight && secondRect.bottom >= 0) {
-          setIsFirstVisible(false);
-        }
+      if (!content || content?.length === 1) return;
+      const first = firstContainerRef?.current?.getBoundingClientRect();
+      const second = secondContainerRef?.current?.getBoundingClientRect();
+      const third = thirdContainerRef?.current?.getBoundingClientRect();
+      if (window.innerWidth < 1280) {
+        if (first.bottom >= 0) return setVisible("first");
+        if (first.bottom < 0 && second.top >= 0) return setVisible("second");
+        if (!!third && second.bottom < 0) return setVisible("third");
+        return;
       }
+      if (first.top >= 0) return setVisible("first");
+      if (first.top < 0 && second.top >= 0) return setVisible("second");
+      if (!!third && second.top < 0) return setVisible("third");
     };
     window.addEventListener("scroll", handleScroll);
     handleScroll();
@@ -37,52 +64,93 @@ function Sticky({ content, title }) {
     };
   }, [content?.length]);
 
+  useEffect(() => {
+    const getMargins = {
+      ...margins,
+    };
+    if (!!thirdContainerRef?.current) {
+      margins.third =
+        window.innerHeight -
+        thirdContainerRef?.current?.getBoundingClientRect().height -
+        topPadding;
+    }
+    if (!!secondContainerRef?.current) {
+      margins.second =
+        window.innerHeight -
+        secondContainerRef?.current?.getBoundingClientRect().height -
+        topPadding;
+    }
+    if (!!firstContainerRef?.current) {
+      margins.first =
+        window.innerHeight -
+        firstContainerRef?.current?.getBoundingClientRect().height -
+        topPadding;
+    }
+    setMargins(getMargins);
+  }, []);
+
   if (!content) return <></>;
 
   return (
     <section className={cn.wrapper} ref={sectionRef}>
-      {window.innerWidth > 1280 && (
-        <>
-          <div className={cn.bg}>
-            {isFirstVisible && (
-              <img alt={content[0].img.alt} src={content[0].img.src} />
-            )}
-            {!isFirstVisible && content?.length === 2 && (
-              <img alt={content[1].img.alt} src={content[1].img.src} />
-            )}
-          </div>
-        </>
-      )}
-      <div className={cn.content}>
+      <RenderIMG />
+      <div
+        className={cn.content}
+        style={
+          window.innerWidth >= 1280
+            ? {
+                paddingBottom: margins.third || margins.second || margins.first,
+              }
+            : { paddingBottom: window.innerHeight * mobilePadding * 0.5 }
+        }
+      >
         {content.map((current, index) => (
           <div
             key={current.id}
-            style={{
-              backgroundImage: testing
-                ? `url('${index % 2 === 0 ? "assets/images/test-img.jpg" : "assets/images/test-img-2.jpg"}')`
-                : `url('${current.img.src}')`,
-            }}
-            className={cx(
-              cn.bgMobile,
-              content.length === 3
-                ? !index
-                  ? cn.firstBG
-                  : index === 1
-                    ? cn.midBG
-                    : cn.lastBG
-                : content.length === 2
-                  ? !index
-                    ? cn.firstBG
-                    : cn.lastBG
-                  : cn.oneBG
-            )}
+            style={
+              window.innerWidth >= 1280
+                ? {
+                    marginBottom:
+                      content?.length === 3
+                        ? !index
+                          ? margins.first
+                          : index === 1
+                            ? margins.second
+                            : 0
+                        : content?.length === 2
+                          ? !index
+                            ? margins.first
+                            : 0
+                          : 0,
+                  }
+                : {
+                    marginBottom:
+                      content?.length === 3
+                        ? !index
+                          ? window.innerHeight * mobilePadding
+                          : index === 1
+                            ? window.innerHeight * mobilePadding
+                            : 0
+                        : content?.length === 2
+                          ? !index
+                            ? window.innerHeight * mobilePadding
+                            : 0
+                          : 0,
+                  }
+            }
           >
             <div
-              className={cx(cn.container, !index ? cn.first : cn.second)}
-              ref={!index ? firstContainerRef : secondContainerRef}
+              className={cn.container}
+              ref={
+                !index
+                  ? firstContainerRef
+                  : index === 1
+                    ? secondContainerRef
+                    : thirdContainerRef
+              }
             >
               <p className={cn.sub}>{title}</p>
-              <h3>{current.title}</h3>
+              <h3 dangerouslySetInnerHTML={{ __html: current.title }} />
               <p
                 dangerouslySetInnerHTML={{ __html: current.paragraph }}
                 className={cn.paragraph}

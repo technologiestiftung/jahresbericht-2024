@@ -20,17 +20,30 @@
       top: 0;
       right: 0;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      @media screen and (max-width: $max-width-content) {
+        background-position: center center;
+        background-repeat: no-repeat;
+        animation: fadeIn 0.5s ease-in-out forwards;
+      }
       img {
         opacity: 0;
         width: 70%;
         animation: fadeIn 0.5s ease-in-out forwards;
       }
+      .copyright {
+        width: 70%;
+        p {
+          color: rgba(0, 0, 0, 0.3);
+          font-size: $spacing-sm !important;
+          @include base.body;
+        }
+      }
     }
     .content {
       width: 373px;
-      padding-bottom: 40vh;
       height: fit-content;
       @media screen and (max-width: $max-width-content) {
         width: 100vw;
@@ -60,46 +73,13 @@
           }
         }
         .paragraph {
-          color: #000 !important;
+          color: $color-primary-dark !important;
           @include base.body;
         }
         a {
           margin-top: 27px;
           @media screen and (max-width: $max-width-content) {
             margin-top: $spacing-l;
-          }
-        }
-        &.second {
-          @media screen and (min-width: $max-width-content) {
-            margin-top: 100vh;
-          }
-        }
-      }
-      .bgMobile {
-        @media screen and (max-width: $max-width-content) {
-          background-size: cover;
-          background-position: center center;
-          background-repeat: no-repeat;
-          &.oneBG {
-            padding: 120px 0;
-          }
-          &.firstBG {
-            padding: 120px 0 30px 0;
-            @media screen and (min-width: $absolute-break) {
-              padding: 120px 0 60px 0;
-            }
-          }
-          &.midBG {
-            padding: 30px 0;
-            @media screen and (min-width: $absolute-break) {
-              padding: 60px 0;
-            }
-          }
-          &.lastBG {
-            padding: 30px 0 120px 0;
-            @media screen and (min-width: $absolute-break) {
-              padding: 60px 0 120px 0;
-            }
           }
         }
       }
