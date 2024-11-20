@@ -82,7 +82,7 @@ function Sticky({ content, title }) {
               ref={!index ? firstContainerRef : secondContainerRef}
             >
               <p className={cn.sub}>{title}</p>
-              <h4>{current.title}</h4>
+              <h3>{current.title}</h3>
               <p
                 dangerouslySetInnerHTML={{ __html: current.paragraph }}
                 className={cn.paragraph}

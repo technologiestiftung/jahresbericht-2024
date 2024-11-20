@@ -43,11 +43,13 @@
     .panel {
       transition: $transition-slow;
       overflow: hidden;
-      background: rgba(30, 55, 145, 0.08);
+      background: $bg-color;
+
       .paragraph {
         padding: $spacing-l 0;
         max-width: 552px;
         p {
+          height: 100%;
           color: $color-primary-dark !important;
           border-left: $spacing-2xs solid $color-primary-dark !important;
           padding: 0 $spacing-2xl !important;
