@@ -4,8 +4,7 @@
 :local {
   .sliderContainer {
     margin-bottom: 160px;
-    height: 100vh;
-
+    // height: 100vh;
     @media screen and (max-width: $absolute-break) {
       margin: 0;
       width: 100%;
@@ -55,7 +54,7 @@
         overflow: hidden;
         .contentSlider {
           width: 100%;
-          max-height: 600px;
+          height: 500px;
           display: flex;
           align-items: stretch;
           transform: translateX(0);
@@ -71,14 +70,14 @@
             gap: $spacing-l;
 
             .leftContainer {
-              width: 33%;
+              width: 40%;
               @media screen and (max-width: $max-width-content) {
                 width: 100%;
                 display: none;
               }
             }
             .rightContainer {
-              width: 66%;
+              width: 60%;
               @media screen and (max-width: $max-width-content) {
                 width: 100%;
                 display: none;
@@ -103,6 +102,7 @@
               & > p {
                 color: $color-primary-dark !important;
                 margin-bottom: $spacing-xl !important;
+                user-select: none;
                 @include base.body-intro;
               }
               @media screen and (max-width: $max-width-content) {
@@ -113,16 +113,11 @@
             .bgImage {
               height: 100%;
               box-sizing: border-box;
-              background-size: 120%;
               background-size: cover;
               background-position: center;
               background-repeat: no-repeat;
 
               transition: $transition-slow;
-
-              &:hover {
-                background-size: 130%;
-              }
 
               @media screen and (max-width: $max-width-content) {
                 width: 100%;
@@ -161,6 +156,7 @@
       text-align: center !important;
       padding-top: $spacing-xl !important;
       color: $color-primary-dark !important;
+      user-select: none;
       @include base.body-bold;
       p {
         margin: 0;
