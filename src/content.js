@@ -152,7 +152,17 @@ const content = {
         imgPosition: "right",
       },
       {
-        title: "November/Dezember",
+        title: "November",
+        content:
+          "Bonjour Paris &amp; hello Boston: Unsere Expertise für KI und Stadtbäume bringt uns an die Sorbonne und das MIT.",
+        img: {
+          src: "assets/02-Rueckblick/TSB-Jahresbericht-2024-Rueckblick-Q4-03.jpg",
+          alt: "Eine Gruppe von drei Menschen steht mittig auf einer Wiese vor dem Universitätsgebäude des MIT in Boston, USA.",
+        },
+        imgPosition: "right",
+      },
+      {
+        title: "Dezember",
         content:
           "Ho ho ho, was bringt Berlin noch mehr Datenvergnügen? Unser beliebter Berliner Weihnachtsmarktfinder, jetzt auch auf englisch und mit neuer Suchfunktion.",
         link: "https://weihnachtsmaerkte.odis-berlin.de/",
@@ -264,6 +274,8 @@ const content = {
           img: {
             src: "assets/07-Prototyping/TSB-Jahresbericht-2024-Prototyping-01.png",
             alt: "Laptop und Smartphone, welche die Anwendung GeoExplorer zeigen.",
+            mobileSrc:
+              "assets/07-Prototyping/TSB-Jahresbericht-2024-Prototyping-01-mobile.png",
           },
         },
         {
@@ -275,6 +287,8 @@ const content = {
           img: {
             src: "assets/07-Prototyping/TSB-Jahresbericht-2024-Prototyping-02.png",
             alt: "Laptop und Smartphone, welche die Anwendung Gieß den Kiez zeigen.",
+            mobileSrc:
+              "assets/07-Prototyping/TSB-Jahresbericht-2024-Prototyping-02-mobile.png",
           },
         },
         {
@@ -286,6 +300,8 @@ const content = {
           img: {
             src: "assets/07-Prototyping/TSB-Jahresbericht-2024-Prototyping-03.png",
             alt: "Laptop und Smartphone, welche die Anwendung Parla zeigen.",
+            mobileSrc:
+              "assets/07-Prototyping/TSB-Jahresbericht-2024-Prototyping-03-mobile.png",
           },
         },
       ],
