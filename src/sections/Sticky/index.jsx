@@ -1,10 +1,11 @@
-import cx from "classnames";
 import { useEffect, useRef, useState } from "react";
 import Button from "../../components/Button";
 import cn from "./Sticky.module.scss";
 
-function Sticky({ content, title }) {
+function Sticky({ content, title, id }) {
   const sectionRef = useRef(null);
+  const fixedMarginBottom = "100vh";
+  const halfMarginBottom = "50vh";
   const firstContainerRef = useRef(null);
   const secondContainerRef = useRef(null);
   const thirdContainerRef = useRef(null);
@@ -48,9 +49,9 @@ function Sticky({ content, title }) {
       const second = secondContainerRef?.current?.getBoundingClientRect();
       const third = thirdContainerRef?.current?.getBoundingClientRect();
       if (window.innerWidth < 1280) {
-        if (first.bottom >= 0) return setVisible("first");
-        if (first.bottom < 0 && second.top >= 0) return setVisible("second");
-        if (!!third && second.bottom < 0) return setVisible("third");
+        if (first?.bottom >= 0) return setVisible("first");
+        if (first?.bottom < 0 && second.top >= 0) return setVisible("second");
+        if (!!third && second?.bottom < 0) return setVisible("third");
         return;
       }
       if (first.top >= 0) return setVisible("first");
@@ -92,7 +93,7 @@ function Sticky({ content, title }) {
   if (!content) return <></>;
 
   return (
-    <section className={cn.wrapper} ref={sectionRef}>
+    <section className={cn.wrapper} ref={sectionRef} id={`${id}-sticky`}>
       <RenderIMG />
       <div
         className={cn.content}
@@ -108,35 +109,42 @@ function Sticky({ content, title }) {
           <div
             key={current.id}
             style={
-              window.innerWidth >= 1280
+              fixedMarginBottom
                 ? {
                     marginBottom:
-                      content?.length === 3
-                        ? !index
-                          ? margins.first
-                          : index === 1
-                            ? margins.second
-                            : 0
-                        : content?.length === 2
+                      index + 1 === content.length
+                        ? halfMarginBottom
+                        : fixedMarginBottom,
+                  }
+                : window.innerWidth >= 1280
+                  ? {
+                      marginBottom:
+                        content?.length === 3
                           ? !index
                             ? margins.first
-                            : 0
-                          : 0,
-                  }
-                : {
-                    marginBottom:
-                      content?.length === 3
-                        ? !index
-                          ? window.innerHeight * mobilePadding
-                          : index === 1
-                            ? window.innerHeight * mobilePadding
-                            : 0
-                        : content?.length === 2
+                            : index === 1
+                              ? margins.second
+                              : 0
+                          : content?.length === 2
+                            ? !index
+                              ? margins.first
+                              : 0
+                            : 0,
+                    }
+                  : {
+                      marginBottom:
+                        content?.length === 3
                           ? !index
                             ? window.innerHeight * mobilePadding
-                            : 0
-                          : 0,
-                  }
+                            : index === 1
+                              ? window.innerHeight * mobilePadding
+                              : 0
+                          : content?.length === 2
+                            ? !index
+                              ? window.innerHeight * mobilePadding
+                              : 0
+                            : 0,
+                    }
             }
           >
             <div
