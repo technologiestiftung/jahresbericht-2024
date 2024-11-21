@@ -1,7 +1,7 @@
 import cn from "./App.module.scss";
-import content from "./content";
 import NavBar from "./components/NavBar";
 import Slider from "./components/Slider";
+import content from "./content";
 import Footer from "./sections/Footer";
 import Intro from "./sections/Intro";
 import Main from "./sections/Main";
@@ -29,8 +29,8 @@ function App() {
             />
           </span>
         ))}
-        <People />
       </div>
+      <People />
       <Outro />
       <Footer />
     </div>
