@@ -181,7 +181,7 @@ function NavBar() {
             icon={icon.icon}
             name={icon.name}
             handleSingleNavBarIconClick={val => {
-              if (!!icons[val]) {
+              if (icons[val]) {
                 trackScrolling.current = false;
                 const getID =
                   icons[val].id ||

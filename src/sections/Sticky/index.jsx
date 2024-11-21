@@ -51,12 +51,12 @@ function Sticky({ content, title, id }) {
       if (window.innerWidth < 1280) {
         if (first?.bottom >= 0) return setVisible("first");
         if (first?.bottom < 0 && second.top >= 0) return setVisible("second");
-        if (!!third && second?.bottom < 0) return setVisible("third");
+        if (third && second?.bottom < 0) return setVisible("third");
         return;
       }
       if (first.top >= 0) return setVisible("first");
       if (first.top < 0 && second.top >= 0) return setVisible("second");
-      if (!!third && second.top < 0) return setVisible("third");
+      if (third && second.top < 0) return setVisible("third");
     };
     window.addEventListener("scroll", handleScroll);
     handleScroll();
@@ -69,19 +69,19 @@ function Sticky({ content, title, id }) {
     const getMargins = {
       ...margins,
     };
-    if (!!thirdContainerRef?.current) {
+    if (thirdContainerRef?.current) {
       margins.third =
         window.innerHeight -
         thirdContainerRef?.current?.getBoundingClientRect().height -
         topPadding;
     }
-    if (!!secondContainerRef?.current) {
+    if (secondContainerRef?.current) {
       margins.second =
         window.innerHeight -
         secondContainerRef?.current?.getBoundingClientRect().height -
         topPadding;
     }
-    if (!!firstContainerRef?.current) {
+    if (firstContainerRef?.current) {
       margins.first =
         window.innerHeight -
         firstContainerRef?.current?.getBoundingClientRect().height -
