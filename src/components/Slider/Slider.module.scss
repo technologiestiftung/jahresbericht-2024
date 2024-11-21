@@ -59,11 +59,9 @@
           align-items: stretch;
           transform: translateX(0);
           transition: $transition-slow;
-
           @media screen and (max-width: $max-width-content) {
-            max-height: 100%;
+            height: auto;
           }
-
           .slide {
             min-width: 100%;
             display: flex;
@@ -178,14 +176,14 @@
       @media screen and (max-width: $max-width-content) {
         display: block;
         position: absolute;
-        top: 100px;
+        top: calc((240px - 48px) / 2);
         z-index: 20;
         width: $spacing-2xl;
         height: $spacing-2xl;
         background-color: $color-white;
         box-shadow: $drop-shadow;
       }
-
+      // checken
       @media screen and (min-width: $absolute-break) and (max-width: $max-width-content) {
         top: 160px;
       }
