@@ -27,14 +27,15 @@
         background-position: center center;
         background-repeat: no-repeat;
         animation: fadeIn 0.5s ease-in-out forwards;
+        background-size: cover;
       }
       img {
         opacity: 0;
-        width: 70%;
+        width: 1023px;
         animation: fadeIn 0.5s ease-in-out forwards;
       }
       .copyright {
-        width: 70%;
+        width: 1023px;
         p {
           color: rgba(0, 0, 0, 0.3);
           font-size: $spacing-sm !important;
@@ -45,9 +46,10 @@
     .content {
       width: 373px;
       height: fit-content;
+      padding-bottom: 100vh;
       @media screen and (max-width: $max-width-content) {
         width: 100vw;
-        padding-bottom: 0;
+        // padding-bottom: 0;
         margin: 0;
       }
       .container {
