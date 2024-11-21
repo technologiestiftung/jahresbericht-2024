@@ -12,20 +12,25 @@
     }
     &.left {
       flex-direction: row-reverse;
+      & > div:first-of-type {
+        margin-left: $spacing-6xl;
+        @media screen and (max-width: $absolute-break) {
+          margin-left: 0;
+        }
+      }
       @media screen and (max-width: $absolute-break) {
         flex-direction: column;
       }
     }
     &.right {
       & > div:first-of-type {
-        margin-right: $spacing-5xl;
+        margin-right: $spacing-6xl;
         @media screen and (max-width: $absolute-break) {
           margin-right: 0;
         }
       }
     }
     & > div:first-of-type {
-      margin-right: $spacing-5xl;
       @media screen and (max-width: $absolute-break) {
         margin-right: 0;
       }

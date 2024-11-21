@@ -31,6 +31,18 @@ function SingleAccordion({ content, title = "Vorwort lesen" }) {
     }
   }, []);
 
+  useEffect(() => {
+    if (panelEl.current) {
+      setScrollHeight(panelEl.current.scrollHeight);
+    }
+  }, [isOpen]);
+
+  window.addEventListener("resize", () => {
+    if (panelEl.current) {
+      setScrollHeight(panelEl.current.scrollHeight);
+    }
+  });
+
   return (
     <div className={cn.accordion} id={`accordion-${Math.random()}`}>
       <div
@@ -45,14 +57,18 @@ function SingleAccordion({ content, title = "Vorwort lesen" }) {
         }}
         ref={clickEl}
       >
+        <p className={cn.title}>{title}</p>
         <div className={isOpen ? cn.turned : ""}>
           <Arrow />
         </div>
-        <p className={cn.title}>{title}</p>
       </div>
       <div
         className={cn.panel}
-        style={isOpen ? { maxHeight: scrollHeight + 60 } : { maxHeight: "0px" }}
+        style={
+          isOpen
+            ? { maxHeight: scrollHeight + 60 }
+            : { maxHeight: "0px", padding: "0px" }
+        }
       >
         <div ref={panelEl} className={cn.paragraph}>
           <p
