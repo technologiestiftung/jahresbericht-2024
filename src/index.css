@@ -17,3 +17,7 @@ body {
   hyphens: auto;
   text-wrap: balance;
 }
+
+a {
+  text-decoration: none;
+}
