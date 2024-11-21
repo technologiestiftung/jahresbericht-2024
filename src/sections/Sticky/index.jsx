@@ -1,34 +1,46 @@
-import cx from "classnames";
 import { useEffect, useRef, useState } from "react";
 import Button from "../../components/Button";
 import cn from "./Sticky.module.scss";
 
-function Sticky({ content, title }) {
+function Sticky({ content, title, id }) {
   const sectionRef = useRef(null);
   const firstContainerRef = useRef(null);
   const secondContainerRef = useRef(null);
-  const [isFirstVisible, setIsFirstVisible] = useState(true);
+  const thirdContainerRef = useRef(null);
+  const [visible, setVisible] = useState("first");
 
-  const testing = false;
+  const RenderIMG = () => {
+    const setIndex = visible === "first" ? 0 : visible === "second" ? 1 : 2;
+    if (window.innerWidth < 1280)
+      return (
+        <div
+          className={cn.bg}
+          style={{
+            backgroundImage: `url('${content[setIndex].img.mobileSrc || content[setIndex].img.src}')`,
+          }}
+        />
+      );
+    return (
+      <div className={cn.bg}>
+        <img alt={content[setIndex].img.alt} src={content[setIndex].img.src} />
+        {content[setIndex].img.copyright && (
+          <div className={cn.copyright}>
+            <p>{content[setIndex].img.copyright}</p>
+          </div>
+        )}
+      </div>
+    );
+  };
 
   useEffect(() => {
     const handleScroll = () => {
-      if (
-        content?.length === 2 &&
-        firstContainerRef.current &&
-        secondContainerRef.current
-      ) {
-        const firstRect = firstContainerRef.current.getBoundingClientRect();
-        const secondRect = secondContainerRef.current.getBoundingClientRect();
-        const windowHeight =
-          window.innerHeight || document.documentElement.clientHeight;
-
-        if (firstRect.bottom >= 0 && firstRect.top <= windowHeight) {
-          setIsFirstVisible(true);
-        } else if (secondRect.top <= windowHeight && secondRect.bottom >= 0) {
-          setIsFirstVisible(false);
-        }
-      }
+      if (!content || content?.length === 1) return;
+      const first = firstContainerRef?.current?.getBoundingClientRect();
+      const second = secondContainerRef?.current?.getBoundingClientRect();
+      const third = thirdContainerRef?.current?.getBoundingClientRect();
+      if (first?.bottom >= 0) return setVisible("first");
+      if (first?.bottom < 0 && second.top >= 0) return setVisible("second");
+      if (third && second?.bottom < 0) return setVisible("third");
     };
     window.addEventListener("scroll", handleScroll);
     handleScroll();
@@ -40,49 +52,26 @@ function Sticky({ content, title }) {
   if (!content) return <></>;
 
   return (
-    <section className={cn.wrapper} ref={sectionRef}>
-      {window.innerWidth > 1280 && (
-        <>
-          <div className={cn.bg}>
-            {isFirstVisible && (
-              <img alt={content[0].img.alt} src={content[0].img.src} />
-            )}
-            {!isFirstVisible && content?.length === 2 && (
-              <img alt={content[1].img.alt} src={content[1].img.src} />
-            )}
-          </div>
-        </>
-      )}
+    <section className={cn.wrapper} ref={sectionRef} id={`${id}-sticky`}>
+      <RenderIMG />
       <div className={cn.content}>
         {content.map((current, index) => (
           <div
             key={current.id}
-            style={{
-              backgroundImage: testing
-                ? `url('${index % 2 === 0 ? "assets/images/test-img.jpg" : "assets/images/test-img-2.jpg"}')`
-                : `url('${current.img.src}')`,
-            }}
-            className={cx(
-              cn.bgMobile,
-              content.length === 3
-                ? !index
-                  ? cn.firstBG
-                  : index === 1
-                    ? cn.midBG
-                    : cn.lastBG
-                : content.length === 2
-                  ? !index
-                    ? cn.firstBG
-                    : cn.lastBG
-                  : cn.oneBG
-            )}
+            style={{ marginBottom: index + 1 === content.length ? 0 : "100vh" }}
           >
             <div
-              className={cx(cn.container, !index ? cn.first : cn.second)}
-              ref={!index ? firstContainerRef : secondContainerRef}
+              className={cn.container}
+              ref={
+                !index
+                  ? firstContainerRef
+                  : index === 1
+                    ? secondContainerRef
+                    : thirdContainerRef
+              }
             >
               <p className={cn.sub}>{title}</p>
-              <h3>{current.title}</h3>
+              <h3 dangerouslySetInnerHTML={{ __html: current.title }} />
               <p
                 dangerouslySetInnerHTML={{ __html: current.paragraph }}
                 className={cn.paragraph}

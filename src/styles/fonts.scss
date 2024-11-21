@@ -31,11 +31,12 @@ h1 {
   font-size: $spacing-5xl;
   font-style: normal;
   font-weight: 700;
-  line-height: normal;
+  line-height: 102px;
   color: $color-white;
   margin: 0;
   @media screen and (max-width: $absolute-break) {
     font-size: 40px;
+    line-height: 51px;
   }
 }
 h2 {
@@ -43,11 +44,12 @@ h2 {
   font-size: $spacing-2xl;
   font-style: normal;
   font-weight: 700;
-  line-height: normal;
+  line-height: 61px;
   color: white;
   margin: 0;
   @media screen and (max-width: $absolute-break) {
     font-size: $spacing-xl;
+    line-height: 41px;
   }
 }
 h3 {
@@ -55,10 +57,11 @@ h3 {
   font-size: $spacing-xl;
   font-style: normal;
   font-weight: 700;
-  line-height: normal;
+  line-height: 41px;
   margin: 0;
   @media screen and (max-width: $absolute-break) {
     font-size: $spacing-l;
+    line-height: 30px;
   }
 }
 h4 {
@@ -66,10 +69,11 @@ h4 {
   font-size: $spacing-l;
   font-style: normal;
   font-weight: 700;
-  line-height: normal;
+  line-height: 30px;
   color: $color-white;
   margin: 0;
   @media screen and (max-width: $absolute-break) {
     font-size: 20px;
+    line-height: 25px;
   }
 }

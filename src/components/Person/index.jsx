@@ -22,9 +22,17 @@ function Person({ item, align, accordion, index }) {
         </div>
       </div>
       <div>
-        <p>&quot;{item.vorwort || item.intro}&quot;</p>
+        <p
+          dangerouslySetInnerHTML={{
+            __html: `&bdquo;${item.vorwort || item.intro}&ldquo;`,
+          }}
+        />
         <p>{item.name}</p>
-        <p>{item.position}</p>
+        <p
+          dangerouslySetInnerHTML={{
+            __html: item.position,
+          }}
+        />
         {!!accordion && (
           <div className={cn.accordionWrapper}>
             <SingleAccordion content={item.content} />

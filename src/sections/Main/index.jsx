@@ -9,7 +9,10 @@ function MainSection({ content }) {
         <div>{!!id && <Icons type={id} />}</div>
         <div>
           <h2 className={cn.title}>{title}</h2>
-          <p className={cn.subTitle}>{text}</p>
+          <p
+            className={cn.subTitle}
+            dangerouslySetInnerHTML={{ __html: text }}
+          />
         </div>
       </div>
     </section>

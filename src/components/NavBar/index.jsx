@@ -1,16 +1,26 @@
+import { useEffect, useState, useCallback, useRef } from "react";
 import cn from "./NavBar.module.scss";
-
-import { useEffect, useState } from "react";
+import SmartCityIcon from "../../icons/SmartCityNav.svg";
+import NeueTechnologienIcon from "../../icons/NeueTechnologienNav.svg";
 import BildungIcon from "../../icons/BildungNav.svg";
 import KulturIcon from "../../icons/KulturNav.svg";
-import NeueTechnologienIcon from "../../icons/NeueTechnologienNav.svg";
 import PrototypingIcon from "../../icons/PrototypingNav.svg";
-import SmartCityIcon from "../../icons/SmartCityNav.svg";
 import UpIcon from "../../icons/Up.svg";
 import WeiteresIcon from "../../icons/WeiteresNav.svg";
 import SingleNavBarIcon from "./SingleNavBarIcon";
+import content from "../../content";
 
 function NavBar() {
+  const scrollThreshold = true;
+  const trackScrolling = useRef(true);
+  const iconWidth = window.innerWidth >= 768 ? 56 : 48;
+  const [showNav, setShowNav] = useState(false);
+  const ids = content.chapters.flatMap(chapter => [
+    chapter.id,
+    `${chapter.id}-sticky`,
+  ]);
+  const sections = ids.map(id => document.getElementById(id));
+  const [indicator, setIndicator] = useState("");
   const icons = [
     { name: "Smart City", id: "smartCity", icon: <SmartCityIcon /> },
     {
@@ -36,22 +46,12 @@ function NavBar() {
       icon: <WeiteresIcon />,
     },
   ];
-  const [indicator, setIndicator] = useState(0);
 
-  const handleScroll = () => {
-    const position = window.scrollY;
-    if (window.innerWidth <= 768) {
-      setIndicator((position / document.documentElement.scrollHeight) * 100);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const handleSingleNavBarIconClick = icon => {
-    const getID = icon.id || icon.name.toLowerCase().replace(" ", "-");
+  const handleSingleNavBarIconClick = downIndex => {
+    if (!icons[downIndex]) return;
+    const getID =
+      icons[downIndex].id ||
+      icons[downIndex].name.toLowerCase().replace(" ", "-");
     const section = document.getElementById(getID);
     if (!section) return;
     section.scrollIntoView({
@@ -60,63 +60,155 @@ function NavBar() {
     });
   };
 
-  const handleUpIconClick = () => {
+  const handleUpIconClick = () =>
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
+
+  const setLeft = () => {
+    if (indicator === "smartCity" || !indicator) return 0;
+    if (indicator === "neueTechnologien") return iconWidth;
+    if (indicator === "bildung") return iconWidth * 2;
+    if (indicator === "kultur") return iconWidth * 3;
+    if (indicator === "prototyping") return iconWidth * 4;
+    if (indicator === "weitereAktivitaeten") return iconWidth * 5;
+    return 0;
   };
 
+  function checkCurrentSection() {
+    if (scrollThreshold) {
+      let newCurrentSection = null;
+      sections.forEach(section => {
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (
+            rect.top <= window.innerHeight / 2 &&
+            rect.bottom >= window.innerHeight / 2
+          ) {
+            newCurrentSection = section.id;
+          }
+        }
+      });
+      if (newCurrentSection) {
+        const getID = newCurrentSection.replace("-sticky", "");
+        if (indicator !== getID) {
+          setIndicator(getID);
+        }
+      }
+    } else {
+      const scrollPosition = window.scrollY + window.innerHeight / 2; // Middle of the viewport
+      let currentSection = null;
+      sections.forEach(section => {
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          const sectionTop = window.scrollY + rect.top;
+          const sectionBottom = sectionTop + section.offsetHeight;
+
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            currentSection = section.id;
+          }
+        }
+      });
+      if (currentSection) {
+        const getID = currentSection.replace("-sticky", "");
+        if (indicator !== getID) {
+          setIndicator(getID);
+        }
+      }
+    }
+  }
+
+  const handleScroll = useCallback(() => {
+    // console.log("handleScroll", trackScrolling.current);
+    if (!trackScrolling.current) return;
+    checkCurrentSection();
+    const chaptersContent = document
+      .getElementById("chapters")
+      .getBoundingClientRect();
+    const position = window.scrollY;
+    const getScrollPosition = chaptersContent.top + window.scrollY;
+    const getEndPosition =
+      chaptersContent.top +
+      window.scrollY +
+      chaptersContent.height -
+      window.innerHeight;
+    if (
+      position >= getScrollPosition &&
+      position <= getEndPosition &&
+      !showNav
+    ) {
+      setShowNav(true);
+    }
+    if (
+      (position < getScrollPosition || position > getEndPosition) &&
+      showNav
+    ) {
+      setShowNav(false);
+    }
+  }, [showNav]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+  useEffect(() => {
+    console.log("indicator", indicator);
+  }, [indicator]);
+
   return (
-    <div className={cn.wrapper}>
+    <div
+      className={cn.wrapper}
+      style={
+        showNav
+          ? {}
+          : window.innerWidth < 768
+            ? { transform: `translateY(calc(25px + 100%)) translateX(-50%)` }
+            : { transform: `translateY(calc(41px + 100%)) translateX(-50%)` }
+      }
+    >
+      <div
+        className={cn.indicator}
+        style={{
+          left: setLeft(),
+        }}
+      />
       <div className={cn.main}>
         {icons.map((icon, index) => (
-          <div
+          <SingleNavBarIcon
             key={index}
-            role='button'
-            tabIndex={0}
-            onClick={() => handleSingleNavBarIconClick(icon)}
-            onKeyDown={event => {
-              if (event.key === "Enter" || event.key === " ") {
-                handleSingleNavBarIconClick(icon);
+            index={index}
+            icon={icon.icon}
+            name={icon.name}
+            handleSingleNavBarIconClick={val => {
+              if (icons[val]) {
+                trackScrolling.current = false;
+                const getID =
+                  icons[val].id ||
+                  icons[val].name.toLowerCase().replace(" ", "-");
+                setIndicator(getID);
+                setTimeout(() => {
+                  trackScrolling.current = true;
+                }, 1000);
               }
+              handleSingleNavBarIconClick(val);
             }}
-          >
-            <SingleNavBarIcon icon={icon.icon} name={icon.name} />
-          </div>
+          />
         ))}
-        {window.innerWidth <= 768 && (
-          <div
-            role='button'
-            tabIndex={0}
-            onClick={() => handleUpIconClick()}
-            onKeyDown={event => {
-              if (event.key === "Enter" || event.key === " ") {
-                handleUpIconClick();
-              }
-            }}
-          >
-            <UpIcon />
-          </div>
-        )}
       </div>
-      {window.innerWidth > 768 ? (
-        <div
-          role='button'
-          tabIndex={0}
-          className={cn.jump}
-          onClick={() => handleUpIconClick()}
-          onKeyDown={event => {
-            if (event.key === "Enter" || event.key === " ") {
-              handleUpIconClick();
-            }
-          }}
-        >
-          <UpIcon />
-        </div>
-      ) : (
-        <span className={cn.borderMobile} style={{ width: `${indicator}%` }} />
-      )}
+      <div
+        role='button'
+        tabIndex={0}
+        className={cn.jump}
+        onClick={() => handleUpIconClick()}
+        onKeyDown={event => {
+          if (event.key === "Enter" || event.key === " ") {
+            handleUpIconClick();
+          }
+        }}
+      >
+        <UpIcon />
+      </div>
     </div>
   );
 }

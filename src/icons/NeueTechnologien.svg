@@ -1,4 +1,6 @@
-<svg width="204" height="204" viewBox="0 0 204 204" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg role="img" aria-labelledby="svgTitle svgDesc"  width="204" height="204" viewBox="0 0 204 204" fill="none" xmlns="http://www.w3.org/2000/svg">
+<title id="svgTitle">Neue Technologien Icon</title>
+<desc id="svgDesc">Eine Outline-Illustration: Ein Roboter, daneben drei diagonal angeordnete Punkte durch eine Linie verbunden</desc>
 <g clip-path="url(#clip0_627_400)">
 <path d="M69.4998 42.6666V22.8333H49.6665" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M99.2502 42.6667H39.7502C34.2733 42.6667 29.8335 47.1066 29.8335 52.5834V92.2501C29.8335 97.7269 34.2733 102.167 39.7502 102.167H99.2502C104.727 102.167 109.167 97.7269 109.167 92.2501V52.5834C109.167 47.1066 104.727 42.6667 99.2502 42.6667Z" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
