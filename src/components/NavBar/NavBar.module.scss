@@ -14,6 +14,7 @@
     grid-template-columns: 1fr 56px;
     gap: $spacing-s;
     @media screen and (max-width: $absolute-break) {
+      z-index: 30;
       grid-template-columns: 1fr 48px;
       bottom: $spacing-m;
     }

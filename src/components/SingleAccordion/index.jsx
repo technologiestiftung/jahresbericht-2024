@@ -38,14 +38,16 @@ function SingleAccordion({ content, title = "Vorwort lesen" }) {
         }}
         ref={clickEl}
       >
+        <p className={cn.title}>{title}</p>
         <div className={isOpen ? cn.turned : ""}>
           <Arrow />
         </div>
-        <p className={cn.title}>{title}</p>
       </div>
       <div
         className={cn.panel}
-        style={isOpen ? { maxHeight: "none" } : { maxHeight: "0px" }}
+        style={
+          isOpen ? { maxHeight: "none" } : { maxHeight: "0px", padding: "0px" }
+        }
       >
         <div ref={panelEl} className={cn.paragraph}>
           <p
