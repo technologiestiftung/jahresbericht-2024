@@ -1,14 +1,14 @@
-import { useEffect, useState, useCallback, useRef } from "react";
-import cn from "./NavBar.module.scss";
-import SmartCityIcon from "../../icons/SmartCityNav.svg";
-import NeueTechnologienIcon from "../../icons/NeueTechnologienNav.svg";
+import { useCallback, useEffect, useRef, useState } from "react";
+import content from "../../content";
 import BildungIcon from "../../icons/BildungNav.svg";
 import KulturIcon from "../../icons/KulturNav.svg";
+import NeueTechnologienIcon from "../../icons/NeueTechnologienNav.svg";
 import PrototypingIcon from "../../icons/PrototypingNav.svg";
+import SmartCityIcon from "../../icons/SmartCityNav.svg";
 import UpIcon from "../../icons/Up.svg";
 import WeiteresIcon from "../../icons/WeiteresNav.svg";
+import cn from "./NavBar.module.scss";
 import SingleNavBarIcon from "./SingleNavBarIcon";
-import content from "../../content";
 
 function NavBar() {
   const scrollThreshold = true;
@@ -152,9 +152,6 @@ function NavBar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
-  useEffect(() => {
-    console.log("indicator", indicator);
-  }, [indicator]);
 
   return (
     <div
