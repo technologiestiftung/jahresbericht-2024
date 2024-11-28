@@ -4,8 +4,8 @@
 .intro {
   background-color: $color-primary-dark;
   min-height: 100vh;
+  box-sizing: border-box;
 
-  
   .content {
     display: flex;
     padding-bottom: 147px;
@@ -32,8 +32,10 @@
         justify-content: flex-end;
 
         .header {
-          margin-top: 37px;
-          width: 80%;
+          width: 542px;
+          @media screen and (max-width: $absolute-break) {
+            width: 80%;
+          }
         }
       }
     }
@@ -60,7 +62,6 @@
   @media screen and (min-width: $absolute-break) {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
-    height: 100vh;
-    max-height: $max-height-section;
+    min-height: 100vh;
   }
 }
