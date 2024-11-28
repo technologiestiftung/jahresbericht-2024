@@ -45,9 +45,9 @@
       padding-top: $spacing-l;
       padding-bottom: $spacing-l;
       height: 100%;
+
       .paragraph {
-        padding: 0px $spacing-s 0px $spacing-l;
-        max-width: 552px;
+        padding: 0px $spacing-l;
         p {
           height: 100%;
           color: $color-primary-dark !important;
