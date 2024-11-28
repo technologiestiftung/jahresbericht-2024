@@ -17,7 +17,6 @@
       z-index: -1;
       width: 100%;
       min-height: 100vh;
-      height: 100%;
       top: 0;
       right: 0;
       display: flex;
@@ -31,13 +30,13 @@
         background-repeat: no-repeat;
         animation: fadeIn 0.5s ease-in-out forwards;
         background-size: cover;
+        height: 100%;
       }
       img {
         opacity: 0;
         max-width: 1023px;
         animation: fadeIn 0.5s ease-in-out forwards;
         @media screen and (max-width: $max-width-content) {
-          min-height: 100vh;
           height: 100%;
           object-fit: cover;
           background-size: cover;
