@@ -3,13 +3,11 @@
 
 .intro {
   background-color: $color-primary-dark;
+  min-height: 100vh;
   .content {
     display: flex;
-    height: 100%;
     .logoAndHeadline {
-      @media screen and (min-width: $absolute-break) {
-        padding-top: 84px;
-      }
+      padding-top: 84px;
       .logo {
         height: 69px;
         margin-bottom: 87px;
