@@ -34,7 +34,8 @@
         .header {
           width: 542px;
           @media screen and (max-width: $absolute-break) {
-            width: 80%;
+            height: 351px;
+            max-width: 80%;
           }
         }
       }
