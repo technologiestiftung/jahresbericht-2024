@@ -4,8 +4,11 @@
 .intro {
   background-color: $color-primary-dark;
   min-height: 100vh;
+
+  
   .content {
     display: flex;
+    padding-bottom: 147px;
     .logoAndHeadline {
       padding-top: 84px;
       .logo {
@@ -20,8 +23,10 @@
     .headerImage {
       display: flex;
       align-items: center;
+      padding-top: 165px;
 
       @media screen and (max-width: $absolute-break) {
+        padding-top: 37px;
         display: flex;
         width: 100%;
         justify-content: flex-end;
@@ -29,12 +34,6 @@
         .header {
           margin-top: 37px;
           width: 80%;
-        }
-      }
-
-      @media screen and (min-width: $absolute-break) {
-        .header {
-          width: 100%;
         }
       }
     }
