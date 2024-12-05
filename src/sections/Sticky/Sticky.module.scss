@@ -78,6 +78,7 @@
           color: $color-primary-dark;
           font-size: $spacing-l;
           margin: 3px 0 27px 0;
+          line-height: $spacing-xl;
           @media screen and (max-width: $max-width-content) {
             margin: 0px 0 $spacing-l 0;
           }
