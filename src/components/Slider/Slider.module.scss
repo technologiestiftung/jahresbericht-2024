@@ -93,7 +93,7 @@
               h3 {
                 color: $color-primary-dark;
                 font-size: $spacing-l;
-                margin-bottom: 34px;
+                margin-bottom: $spacing-l;
                 @media screen and (max-width: $absolute-break) {
                   font-size: 20px;
                 }
