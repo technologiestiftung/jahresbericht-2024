@@ -34,6 +34,7 @@ h1 {
   line-height: 102px;
   color: $color-white;
   margin: 0;
+  hyphens: none;
   @media screen and (max-width: $absolute-break) {
     font-size: 40px;
     line-height: 51px;
@@ -47,6 +48,7 @@ h2 {
   line-height: 61px;
   color: white;
   margin: 0;
+  hyphens: none;
   @media screen and (max-width: $absolute-break) {
     font-size: $spacing-xl;
     line-height: 41px;
@@ -59,6 +61,7 @@ h3 {
   font-weight: 700;
   line-height: 41px;
   margin: 0;
+  hyphens: none;
   @media screen and (max-width: $absolute-break) {
     font-size: $spacing-l;
     line-height: 30px;
@@ -72,6 +75,7 @@ h4 {
   line-height: 30px;
   color: $color-white;
   margin: 0;
+  hyphens: none;
   @media screen and (max-width: $absolute-break) {
     font-size: 20px;
     line-height: 25px;
