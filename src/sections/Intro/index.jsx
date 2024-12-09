@@ -18,6 +18,7 @@ function Intro() {
           <img className={cn.header} src={header.src} alt={header.alt} />
         </div>
       </div>
+      <div className={cn.scroll}></div>
     </section>
   );
 }

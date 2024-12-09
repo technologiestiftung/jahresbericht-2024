@@ -1,6 +1,18 @@
 @use "../../styles/base" as base;
 @use "../../styles/constants" as *;
 
+@keyframes down {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translateY(15px);
+  }
+  40% {
+    transform: translate(0);
+  }
+}
+
 .intro {
   background-color: $color-primary-dark;
   min-height: 100vh;
@@ -64,5 +76,33 @@
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     min-height: 100vh;
+  }
+  .scroll {
+    width: 40px;
+    height: 40px;
+    /* width: 60px;
+    height: 60px; */
+    border: 2px solid white;
+    border-radius: 50%;
+    position: absolute;
+    animation: down 2s infinite;
+    -webkit-animation: down 2s infinite;
+    bottom: 20px;
+    left: calc(50vw - 20px);
+    &::before {
+      content: "";
+      position: absolute;
+      top: 11px;
+      left: 12.5px;
+      width: 10px;
+      height: 10px;
+      /* top: 15px;
+      left: 18px;
+      width: 18px;
+      height: 18px; */
+      border-left: 2px solid white;
+      border-bottom: 2px solid white;
+      transform: rotate(-45deg);
+    }
   }
 }
