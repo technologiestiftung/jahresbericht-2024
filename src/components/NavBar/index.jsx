@@ -127,7 +127,8 @@ function NavBar() {
       .getElementById("chapters")
       .getBoundingClientRect();
     const position = window.scrollY;
-    const getScrollPosition = chaptersContent.top + window.scrollY;
+    const getScrollPosition =
+      chaptersContent.top + window.scrollY + window.innerHeight * 0.666666666;
     const getEndPosition =
       chaptersContent.top +
       window.scrollY +
