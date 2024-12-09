@@ -172,7 +172,7 @@ const content = {
         link: "https://weihnachtsmaerkte.odis-berlin.de/",
         btnText: "Zur Webseite",
         img: {
-          src: "assets/02-Rueckblick/TSB-Jahresbericht-2024-Rueckblick-Q4-04.png",
+          src: "assets/02-Rueckblick/TSB-Jahresbericht-2024-Rueckblick-Q4-04.webp",
           alt: "Ein Smartphone, dessen Bildschirm die Anwendung Weihnachtsmarktfinder zeigt.",
         },
         imgPosition: "left",
