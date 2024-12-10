@@ -7,11 +7,7 @@ function People() {
   return (
     <section className={cn.wrapper}>
       <h2 dangerouslySetInnerHTML={{ __html: content.people.title }} />
-      {window.innerWidth > 768 ? (
-        <p dangerouslySetInnerHTML={{ __html: content.people.subtitle }} />
-      ) : (
-        <h3 dangerouslySetInnerHTML={{ __html: content.people.subtitle }} />
-      )}
+      <h3 dangerouslySetInnerHTML={{ __html: content.people.subtitle }} />
       {content.people.content.map((item, index) => (
         <span key={item.id}>
           <Person item={item} align index={index} />

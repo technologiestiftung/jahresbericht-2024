@@ -86,6 +86,7 @@
         .paragraph {
           color: $color-primary-dark !important;
           @include base.body;
+          hyphens: auto;
         }
         a {
           margin-top: 27px;
