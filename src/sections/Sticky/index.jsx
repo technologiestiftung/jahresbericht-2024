@@ -67,7 +67,7 @@ function Sticky({ content, title, id }) {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
     };
-  }, [content?.length]);
+  }, [content]);
 
   if (!content) return null;
 

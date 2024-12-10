@@ -17,7 +17,6 @@
   background-color: $color-primary-dark;
   min-height: 100vh;
   box-sizing: border-box;
-
   .content {
     display: flex;
     padding-bottom: 147px;
@@ -36,13 +35,12 @@
       display: flex;
       align-items: center;
       padding-top: 165px;
-
+      justify-content: flex-end;
       @media screen and (max-width: $absolute-break) {
         padding-top: 37px;
         display: flex;
         width: 100%;
         justify-content: flex-end;
-
         .header {
           width: 542px;
           @media screen and (max-width: $absolute-break) {
@@ -78,31 +76,20 @@
     min-height: 100vh;
   }
   .scroll {
-    width: 40px;
-    height: 40px;
-    /* width: 60px;
-    height: 60px; */
-    border: 2px solid white;
-    border-radius: 50%;
+    width: 55px;
+    height: 55px;
     position: absolute;
     animation: down 2s infinite;
     -webkit-animation: down 2s infinite;
     bottom: 20px;
-    left: calc(50vw - 20px);
-    &::before {
-      content: "";
-      position: absolute;
-      top: 11px;
-      left: 12.5px;
-      width: 10px;
-      height: 10px;
-      /* top: 15px;
-      left: 18px;
-      width: 18px;
-      height: 18px; */
-      border-left: 2px solid white;
-      border-bottom: 2px solid white;
-      transform: rotate(-45deg);
+    left: auto;
+    right: calc((100vw - $smaller-content) / 2);
+    transition:
+      opacity 0.3s ease-in-out,
+      bottom 0.3s ease-in-out;
+    &.scrolled {
+      opacity: 0;
+      bottom: 30px;
     }
   }
 }

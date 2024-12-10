@@ -1,8 +1,23 @@
 import content from "../../content";
 import cn from "./Intro.module.scss";
+import ScrollDownIcon from "../../../src/icons/ScrollDown.svg";
+import { useEffect } from "react";
 
 function Intro() {
   const { headline, logo, header } = content.intro;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scroll = window.scrollY;
+      if (scroll > 0) {
+        document.querySelector(`.${cn.scroll}`).classList.add(cn.scrolled);
+      } else {
+        document.querySelector(`.${cn.scroll}`).classList.remove(cn.scrolled);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <section className={cn.intro}>
@@ -18,7 +33,9 @@ function Intro() {
           <img className={cn.header} src={header.src} alt={header.alt} />
         </div>
       </div>
-      <div className={cn.scroll}></div>
+      <div className={cn.scroll}>
+        <ScrollDownIcon />
+      </div>
     </section>
   );
 }
