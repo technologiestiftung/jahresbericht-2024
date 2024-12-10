@@ -34,6 +34,9 @@
         }
         p {
           @include base.body-intro;
+          @media screen and (max-width: $absolute-break) {
+            @include base.text-mobile;
+          }
         }
       }
 
@@ -43,7 +46,8 @@
         & > div:first-of-type {
           width: 100%;
           & > div {
-            text-align: end;
+            padding-top: $spacing-xs;
+            text-align: center;
           }
         }
       }
@@ -51,14 +55,12 @@
         height: 100vh;
         max-height: $max-height-section;
       }
-      @media screen and (min-width: $absolute-break) and (max-width: $max-width-content) {
-        height: fit-content;
-      }
     }
 
     @media screen and (max-width: $absolute-break) {
-      width: 100%;
       padding: $spacing-3xl $spacing-l;
+      padding-top: 158px;
+      min-height: 100vh;
     }
   }
 }

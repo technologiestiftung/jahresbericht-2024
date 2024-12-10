@@ -8,10 +8,14 @@ function Sticky({ content, title, id }) {
   const secondContainerRef = useRef(null);
   const thirdContainerRef = useRef(null);
   const [visible, setVisible] = useState("first");
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 1280
+  );
 
   const RenderIMG = () => {
     const setIndex = visible === "first" ? 0 : visible === "second" ? 1 : 2;
-    if (window.innerWidth < 1280)
+
+    if (windowWidth < 1280) {
       return (
         <div
           className={cn.bg}
@@ -20,6 +24,8 @@ function Sticky({ content, title, id }) {
           }}
         />
       );
+    }
+
     return (
       <div className={cn.bg}>
         <img alt={content[setIndex].img.alt} src={content[setIndex].img.src} />
@@ -38,18 +44,32 @@ function Sticky({ content, title, id }) {
       const first = firstContainerRef?.current?.getBoundingClientRect();
       const second = secondContainerRef?.current?.getBoundingClientRect();
       const third = thirdContainerRef?.current?.getBoundingClientRect();
+
       if (first?.bottom >= 0) return setVisible("first");
       if (first?.bottom < 0 && second.top >= 0) return setVisible("second");
       if (third && second?.bottom < 0) return setVisible("third");
     };
+
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // Add event listeners
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
+    // Initial calls
     handleScroll();
+    handleResize();
+
+    // Cleanup
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
-  }, [content?.length]);
+  }, [content]);
 
-  if (!content) return <></>;
+  if (!content) return null;
 
   return (
     <section className={cn.wrapper} ref={sectionRef} id={`${id}-sticky`}>
