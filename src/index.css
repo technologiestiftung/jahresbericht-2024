@@ -16,7 +16,7 @@ body {
 
 *,
 body {
-  hyphens: auto;
+  /* hyphens: auto; */
   text-wrap: balance;
 }
 

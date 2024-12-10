@@ -102,7 +102,6 @@ const Slider = () => {
                     )}
                   </div>
                 ))}
-
                 <div className={cn.mobile}>
                   <div
                     className={cn.bgImage}
@@ -115,6 +114,9 @@ const Slider = () => {
                       <Button to={slide.link} label={slide.btnText} />
                     )}
                   </div>
+                  <p className={cn.mobileNavText}>
+                    {indexActive + 1} / {rueckblick.length}
+                  </p>
                 </div>
               </div>
             ))}

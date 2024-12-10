@@ -9,7 +9,7 @@ function Intro() {
   useEffect(() => {
     const handleScroll = () => {
       const scroll = window.scrollY;
-      if (scroll > 0) {
+      if (scroll > window.innerHeight / 5) {
         document.querySelector(`.${cn.scroll}`).classList.add(cn.scrolled);
       } else {
         document.querySelector(`.${cn.scroll}`).classList.remove(cn.scrolled);
