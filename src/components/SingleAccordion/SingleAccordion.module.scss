@@ -52,6 +52,7 @@
           height: 100%;
           color: $color-primary-dark !important;
           @include base.body;
+          hyphens: auto;
         }
       }
     }
