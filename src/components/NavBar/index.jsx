@@ -1,14 +1,14 @@
-import { useEffect, useState, useCallback, useRef } from "react";
-import cn from "./NavBar.module.scss";
-import SmartCityIcon from "../../icons/SmartCityNav.svg";
-import NeueTechnologienIcon from "../../icons/NeueTechnologienNav.svg";
+import { useCallback, useEffect, useRef, useState } from "react";
+import content from "../../content";
 import BildungIcon from "../../icons/BildungNav.svg";
 import KulturIcon from "../../icons/KulturNav.svg";
+import NeueTechnologienIcon from "../../icons/NeueTechnologienNav.svg";
 import PrototypingIcon from "../../icons/PrototypingNav.svg";
+import SmartCityIcon from "../../icons/SmartCityNav.svg";
 import UpIcon from "../../icons/Up.svg";
 import WeiteresIcon from "../../icons/WeiteresNav.svg";
+import cn from "./NavBar.module.scss";
 import SingleNavBarIcon from "./SingleNavBarIcon";
-import content from "../../content";
 
 function NavBar() {
   const scrollThreshold = true;
@@ -76,50 +76,52 @@ function NavBar() {
     return 0;
   };
 
-  function checkCurrentSection() {
-    if (scrollThreshold) {
-      let newCurrentSection = null;
-      sections.forEach(section => {
-        if (section) {
-          const rect = section.getBoundingClientRect();
-          if (
-            rect.top <= window.innerHeight / 2 &&
-            rect.bottom >= window.innerHeight / 2
-          ) {
-            newCurrentSection = section.id;
+  const handleScroll = useCallback(() => {
+    function checkCurrentSection() {
+      if (scrollThreshold) {
+        let newCurrentSection = null;
+        sections.forEach(section => {
+          if (section) {
+            const rect = section.getBoundingClientRect();
+            if (
+              rect.top <= window.innerHeight / 2 &&
+              rect.bottom >= window.innerHeight / 2
+            ) {
+              newCurrentSection = section.id;
+            }
+          }
+        });
+        if (newCurrentSection) {
+          const getID = newCurrentSection.replace("-sticky", "");
+          if (indicator !== getID) {
+            setIndicator(getID);
           }
         }
-      });
-      if (newCurrentSection) {
-        const getID = newCurrentSection.replace("-sticky", "");
-        if (indicator !== getID) {
-          setIndicator(getID);
-        }
-      }
-    } else {
-      const scrollPosition = window.scrollY + window.innerHeight / 2; // Middle of the viewport
-      let currentSection = null;
-      sections.forEach(section => {
-        if (section) {
-          const rect = section.getBoundingClientRect();
-          const sectionTop = window.scrollY + rect.top;
-          const sectionBottom = sectionTop + section.offsetHeight;
+      } else {
+        const scrollPosition = window.scrollY + window.innerHeight / 2; // Middle of the viewport
+        let currentSection = null;
+        sections.forEach(section => {
+          if (section) {
+            const rect = section.getBoundingClientRect();
+            const sectionTop = window.scrollY + rect.top;
+            const sectionBottom = sectionTop + section.offsetHeight;
 
-          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-            currentSection = section.id;
+            if (
+              scrollPosition >= sectionTop &&
+              scrollPosition < sectionBottom
+            ) {
+              currentSection = section.id;
+            }
           }
-        }
-      });
-      if (currentSection) {
-        const getID = currentSection.replace("-sticky", "");
-        if (indicator !== getID) {
-          setIndicator(getID);
+        });
+        if (currentSection) {
+          const getID = currentSection.replace("-sticky", "");
+          if (indicator !== getID) {
+            setIndicator(getID);
+          }
         }
       }
     }
-  }
-
-  const handleScroll = useCallback(() => {
     // console.log("handleScroll", trackScrolling.current);
     if (!trackScrolling.current) return;
     checkCurrentSection();
@@ -127,7 +129,8 @@ function NavBar() {
       .getElementById("chapters")
       .getBoundingClientRect();
     const position = window.scrollY;
-    const getScrollPosition = chaptersContent.top + window.scrollY;
+    const getScrollPosition =
+      chaptersContent.top + window.scrollY + window.innerHeight * 0.666666666;
     const getEndPosition =
       chaptersContent.top +
       window.scrollY +
@@ -146,15 +149,12 @@ function NavBar() {
     ) {
       setShowNav(false);
     }
-  }, [showNav]);
+  }, [showNav, indicator, sections, scrollThreshold]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
-  useEffect(() => {
-    console.log("indicator", indicator);
-  }, [indicator]);
 
   return (
     <div
