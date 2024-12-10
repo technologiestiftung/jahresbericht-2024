@@ -30,11 +30,13 @@ function Intro() {
           />
         </div>
         <div className={cn.headerImage}>
-          <img className={cn.header} src={header.src} alt={header.alt} />
+          <div>
+            <img className={cn.header} src={header.src} alt={header.alt} />
+            <div className={cn.scroll}>
+              <ScrollDownIcon />
+            </div>
+          </div>
         </div>
-      </div>
-      <div className={cn.scroll}>
-        <ScrollDownIcon />
       </div>
     </section>
   );
