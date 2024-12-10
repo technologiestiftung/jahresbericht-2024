@@ -34,6 +34,9 @@
           margin-bottom: $spacing-xl;
         }
       }
+      @media screen and (max-width: $absolute-break) {
+        padding-top: 0;
+      }
     }
     .headerImage {
       display: flex;
@@ -55,6 +58,10 @@
           transition:
             opacity 0.3s ease-in-out,
             bottom 0.3s ease-in-out;
+          img {
+            height: 100%;
+            width: 100%;
+          }
           @media screen and (max-width: $absolute-break) {
             width: 40px;
             height: 40px;
@@ -82,6 +89,8 @@
     @media screen and (max-width: $absolute-break) {
       padding: 0 $spacing-l;
       flex-direction: column;
+      height: 100vh;
+      justify-content: center;
     }
     @media screen and (min-width: $absolute-break) and (max-width: $smaller-content) {
       flex-direction: column;
