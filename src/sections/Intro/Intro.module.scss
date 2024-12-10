@@ -58,6 +58,10 @@
           transition:
             opacity 0.3s ease-in-out,
             bottom 0.3s ease-in-out;
+          img {
+            height: 100%;
+            width: 100%;
+          }
           @media screen and (max-width: $absolute-break) {
             width: 40px;
             height: 40px;

@@ -1,6 +1,7 @@
 import content from "../../content";
 import cn from "./Intro.module.scss";
 import ScrollDownIcon from "../../../src/icons/ScrollDown.svg";
+import ScrollDownIconPNG from "../../../src/icons/ScrollDown.png";
 import { useEffect } from "react";
 
 function Intro() {
@@ -9,7 +10,7 @@ function Intro() {
   useEffect(() => {
     const handleScroll = () => {
       const scroll = window.scrollY;
-      if (scroll > window.innerHeight / 5) {
+      if (scroll > 0) {
         document.querySelector(`.${cn.scroll}`).classList.add(cn.scrolled);
       } else {
         document.querySelector(`.${cn.scroll}`).classList.remove(cn.scrolled);
@@ -33,7 +34,11 @@ function Intro() {
           <div>
             <img className={cn.header} src={header.src} alt={header.alt} />
             <div className={cn.scroll}>
-              <ScrollDownIcon />
+              {/* <ScrollDownIcon /> */}
+              <img
+                src={ScrollDownIconPNG}
+                alt='Ein Scroll Down Indikator Icon'
+              />
             </div>
           </div>
         </div>
