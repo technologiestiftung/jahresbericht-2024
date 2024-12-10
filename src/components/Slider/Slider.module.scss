@@ -3,7 +3,8 @@
 
 :local {
   .sliderContainer {
-    min-height: 100vh;
+    // min-height: 100vh;
+    margin-bottom: 160px;
     @media screen and (max-width: $absolute-break) {
       margin: 0;
       width: 100%;
