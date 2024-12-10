@@ -17,9 +17,8 @@ function SingleNavBarIcon({ icon, name, index, handleSingleNavBarIconClick }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* <div className={cn.icon}>{icon}</div> */}
       {icon}
-      {isHovered && (
+      {isHovered && window.innerWidth >= 768 && (
         <div className={cx(cn.speechBubble, cn.down)}>
           <p>{name}</p>
         </div>
